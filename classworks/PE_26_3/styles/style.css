@@ -20,6 +20,7 @@ html {
     font-size: 18px;
     margin-bottom: 20px;
     display: block;
+    border: none;
 }
 
 .view-link {
