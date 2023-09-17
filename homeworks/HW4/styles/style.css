@@ -9,7 +9,7 @@ html {
 
 /* --------------------HEADER---------------------------------- */
 
-header {
+.top_part {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +185,7 @@ header {
     align-self: flex-start;
 }
 
-.properies-string p {
+.properies-string .property_text {
     align-self: center;
     line-height: 125%;
     width: 220px;
@@ -219,7 +219,7 @@ header {
 
 /* -------------------------FOOTER---------------------------- */
 
-footer {
+.under_part {
     padding: 16px 52px;
     display: flex;
     justify-content: space-between;
@@ -234,7 +234,7 @@ footer {
     width: 24px;
 }
 
-footer p {
+.under_part p {
     color: #7f828a;
     font-family: "Inter", sans-serif;
     font-size: 18px;
