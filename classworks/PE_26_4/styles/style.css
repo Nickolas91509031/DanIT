@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* -------------------------HEADER------------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 24px;
+    background: #09478F;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo_link {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.top-menu_bar {
+    width: 237px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-menu_bar-item a {
+    text-decoration: none;
+    color: #CDCDCD;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.top-menu_bar-item a:hover {
+    color: #FF9C9C;
+}
+
+.sign-in_link {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.sign-in_link:hover {
+    color: #FF9C9C;
+}
+
+/* -------------------------MAIN------------------------------- */
+
+.users-title {
+    margin-top: 78px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 41px;
+}
+
+.cards-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.card {
+    padding: 20px;
+    display: flex;
+    width: 367px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #09478F;
+    column-gap: 24px;
+    height: fit-content;
+}
+
+/* .card.active {
+    background-color: #09478F;
+}
+
+.card.active .icon {
+    display: none;
+}
+
+.card.active .name {
+    color: #FFFFFF
+}
+
+.card.active .user-card_text {
+    color: #FFF;
+} */
+
+.card:hover {
+    background-color: #09478F;
+}
+
+.card:hover .icon {
+    display: none;
+}
+
+.card:hover .name {
+    color: #FFFFFF;
+}
+
+.card:hover .user-card_text {
+    color: #FFF;
+}
+
+.name-wrapper {
+    display: flex;
+}
+
+.name-wrapper img {
+    margin-bottom: 5px;
+}
+
+.name {
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+.user-card_text {
+    color: #8D8D8D;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.john-wick {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    align-items: center;
+}
