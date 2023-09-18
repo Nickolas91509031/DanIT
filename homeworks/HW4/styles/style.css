@@ -95,7 +95,6 @@ html {
 .cards {
     display: flex;
     column-gap: 24px;
-    align-items: flex-end;
     justify-content: center;
     margin-bottom: 195px;
     padding: 0 52px;
@@ -104,17 +103,19 @@ html {
 .card {
     display: flex;
     flex-direction: column;
+    row-gap: 125px;
     padding: 56px;
     border-radius: 24px;
     border: 1px solid #dadada;
     background: #fdfdfd;
-    height: 789px;
-    justify-content: space-between;
     box-sizing: border-box;
     text-transform: capitalize;
+    margin-top: 28px;
 }
 
 .card.pro {
+    margin-top: 0;
+    row-gap: 97px;
     height: 817px;
     border: 1px solid #161a34;
     background: #161a34;
