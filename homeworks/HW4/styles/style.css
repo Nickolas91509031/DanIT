@@ -9,36 +9,38 @@ html {
 
 /* --------------------HEADER---------------------------------- */
 
-.top_part {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 52px 0 52px;
 }
 
-.logo {
+.header_page_logo {
     display: flex;
-    column-gap: 18px;
+    gap: 18px;
+    color: black;
+    text-decoration: none;
+    cursor: default;
 }
 
-.logo_text {
+.header_page_name {
+    padding: 10px 0;
     font-size: 28px;
     font-weight: 500;
-    line-height: 100%;
 }
 
 .top_menu-bar {
     display: flex;
-    column-gap: 56px;
+    gap: 56px;
 }
 
 .top_menu-bar_item {
     color: #0e0f13;
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
     text-align: center;
     font-size: 20px;
-    font-weight: 400;
     line-height: 125%;
 }
 
@@ -46,15 +48,14 @@ html {
     color: #425df8;
 }
 
-.sign_buttons {
+.authorization {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
 }
 
-.sign_buttons button {
+.authorization button {
     font-size: 18px;
     text-align: center;
-    line-height: 100%;
     font-weight: 500;
     letter-spacing: 0.72px;
     padding: 18px 22px;
@@ -73,37 +74,35 @@ html {
 
 /* --------------------------MAIN-------------------------- */
 
-.plan-title {
+.pricing_page_heading {
     text-align: center;
     margin-top: 157px;
     font-size: 64px;
     font-weight: 500;
-    line-height: 100%;
 }
 
-.plan-title_description {
+.pricing_page_heading_description {
     margin-top: 24px;
     text-align: center;
     color: #7f828a;
     font-size: 22px;
-    font-weight: 400;
     margin-bottom: 120px;
 }
 
 /* ----------------------------CARDS---------------------------- */
 
-.cards {
+.payment_options_wrapper {
     display: flex;
-    column-gap: 24px;
+    gap: 24px;
     justify-content: center;
     margin-bottom: 195px;
     padding: 0 52px;
 }
 
-.card {
+.payment_option {
     display: flex;
     flex-direction: column;
-    row-gap: 125px;
+    gap: 125px;
     padding: 56px;
     border-radius: 24px;
     border: 1px solid #dadada;
@@ -113,80 +112,76 @@ html {
     margin-top: 28px;
 }
 
-.card.pro {
+.payment_option.pro {
     margin-top: 0;
-    row-gap: 97px;
-    height: 817px;
+    gap: 97px;
     border: 1px solid #161a34;
     background: #161a34;
 }
 
-.card.pro a,
-.card.pro p {
+.payment_option.pro a,
+.payment_option.pro p {
     color: #f6fdff;
 }
 
-.card-title {
+.payment_option_title {
     display: flex;
     flex-direction: column;
-    row-gap: 27px;
+    gap: 27px;
 }
 
-.card-name {
+.payment_option_name {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
     line-height: 125%;
 }
 
-.card-description {
+.payment_option_description {
     color: #7f828a;
     text-align: center;
     font-size: 22px;
-    font-weight: 400;
     line-height: 125%;
     width: 304px;
 }
 
-.prise_in_month {
+.payment_option_description-price_in_duration {
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 16px;
+    gap: 16px;
 }
 
-.prise {
+.payment_option_description-price {
     color: #0e0f15;
     font-size: 64px;
     font-weight: 500;
     line-height: 125%; /* 80px */
 }
 
-.month {
+.payment_option_description-duration {
     color: #7f828a;
     font-size: 22px;
-    font-weight: 400;
-    line-height: 100%; /* 22px */
 }
 
 /* ----------------------CARD'S PROPERTIES-------------------- */
 
-.properties {
+.payment_option_properties {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    gap: 16px;
 }
 
-.properies-string {
+.payment_option_properties_item {
     display: flex;
-    column-gap: 16px;
+    gap: 16px;
 }
 
-.properies-string img {
+.payment_option_properties_item img {
     align-self: flex-start;
 }
 
-.properies-string .property_text {
+.payment_option_properties_item p {
     align-self: center;
     line-height: 125%;
     width: 220px;
@@ -211,34 +206,27 @@ html {
     align-self: center;
 }
 
-/* --------------------------LINE-FOOTER------------------------- */
-
-.line-footer {
-    background: #0e0f13;
-    height: 1px;
-}
-
 /* -------------------------FOOTER---------------------------- */
 
-.under_part {
+.footer {
+    border-top: 1px solid #0e0f13;
     padding: 16px 52px;
     display: flex;
     justify-content: space-between;
 }
 
-.under-logo {
+.footer_wrapper {
     display: flex;
-    column-gap: 16px;
+    gap: 16px;
 }
 
-.under-logo img {
+.footer_wrapper img {
     width: 24px;
 }
 
-.under_part p {
+.footer p {
     color: #7f828a;
     font-family: "Inter", sans-serif;
     font-size: 18px;
-    font-weight: 400;
     line-height: 150%;
 }
