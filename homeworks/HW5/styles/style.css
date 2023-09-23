@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+
+html {
+    font-family: "Cabin", sans-serif;
+}
+
+/* ------------------------HEADER-------------------------- */
+
+.header {
+    position: fixed;
+    z-index: 1;
+}
+
+.page_logo_wrapper {
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: #10bbd5;
+    display: flex;
+    padding: 16px 52px;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+
+.page_logo_and_name {
+    display: flex;
+    align-items: center;
+    color: #f8fdfe;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    gap: 4px;
+}
+
+.header_balance_and_basket {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.balance {
+    color: #f8fdfe;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn_basket {
+    border: none;
+    background-color: #10bbd5;
+    display: flex;
+    flex-direction: column;
+    gap: 3.33px;
+    position: relative;
+}
+
+.btn_basket p {
+    position: absolute;
+    top: 8px;
+    left: 23px;
+}
+
+.btn_basket-bottom_part_of_pasket_img {
+    display: flex;
+    gap: 5px;
+    padding-left: 7px;
+}
+
+.page_function {
+    box-sizing: border-box;
+    top: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 52px;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.page_function a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.page_function div {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+/* -------------------------MAIN-------------------------------- */
+
+/* ----------------SECTION BOOKS--------------------------------- */
+
+.section_books {
+    background-color: #eeeeef;
+    padding: 136px 52px 120px;
+}
+
+.section_books-title {
+    color: #1f1f1f;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px; /* 125% */
+    padding-bottom: 23px;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+.books_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 32px;
+    padding-top: 24px;
+}
+
+.book_wrapper {
+    padding: 32px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    border: 1px solid #a8a8a8;
+}
+
+.book_wrapper-img_wrapper {
+    position: relative;
+}
+
+.book_wrapper-img_wrapper img {
+    padding: 0 32px;
+}
+
+/* ------------------------INSCRIPTION------------------------ */
+
+.inscription_wrapper {
+    display: flex;
+    gap: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.inscription_wrapper p {
+    color: #f8fdfe;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.book_wrapper-inscription_hit {
+    background-color: #4200ff;
+}
+
+.book_wrapper-inscription_new {
+    background-color: #af39e7;
+}
+
+.book_wrapper-inscription_discount {
+    background-color: #ea33c0;
+}
+
+/* ------------------------NAME AND PRICE OF BOOK-------------- */
+
+.book_wrapper-name_and_price_of_book {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.name_and_author_of_book {
+    display: flex;
+    flex-direction: column;
+}
+
+.name_of_book {
+    color: #1f1f1f;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px; /* 140% */
+    border-bottom: 1px solid #a8a8a8;
+}
+
+.author_of_book {
+    color: #8e8e8e;
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+}
+
+.book_price_wrapper {
+    display: flex;
+    gap: 24px;
+}
+
+.price_of_book {
+    color: #e90000;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px; /* 133.333% */
+}
+
+.early_book_price {
+    color: #8e8e8e;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px; /* 133.333% */
+    text-decoration: line-through;
+}
+
+.btn_add_to_basket {
+    background-color: #4c394e;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #f8fdfe;
+    border-radius: 4px;
+}
+
+.btn_end_up {
+    background-color: #4d762d;
+    padding: 8px 24px;
+    border: none;
+    color: #f8fdfe;
+    border-radius: 4px;
+}
+
+/* --------------------------BTN-CHAT---------------------------- */
+
+.btn_chat {
+    border: none;
+}
+
+.btn_chat img {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+}
+
+/* -------------------------FOOTER------------------------------ */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4c394e;
+    padding: 32px 52px;
+}
+
+footer p {
+    color: #f8fdfe;
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+}
