@@ -53,10 +53,12 @@ html {
     position: relative;
 }
 
-.btn_basket p {
+.amount_in_the_basket {
     position: absolute;
     top: 8px;
-    left: 23px;
+    left: 12px;
+    width: 30px;
+    text-align: center;
 }
 
 .btn_basket-bottom_part_of_pasket_img {
