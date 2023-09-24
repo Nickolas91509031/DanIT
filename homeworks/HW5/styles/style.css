@@ -56,9 +56,10 @@ html {
 .amount_in_the_basket {
     position: absolute;
     top: 8px;
-    left: 12px;
+    left: 11px;
     width: 30px;
     text-align: center;
+    font-size: 12px;
 }
 
 .btn_basket-bottom_part_of_pasket_img {
@@ -234,7 +235,7 @@ html {
 /* --------------------------BTN-CHAT---------------------------- */
 
 .btn_chat {
-    border: none;
+    border: 0;
 }
 
 .btn_chat img {
