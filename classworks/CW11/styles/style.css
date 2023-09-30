@@ -24,12 +24,12 @@
     transform-style: preserve-3d;
 } */
 
-.container:hover .item {
-    /* transform: translateZ(-1000px); */
-    /* transform: translate3d(20px, 15px, 100px); */
-    /* transform: scale3d(1, 1, 2) rotateX(50deg); */
-    /* transform: rotateY(180deg); */
-}
+/* .container:hover .item {
+    transform: translateZ(-1000px);
+    transform: translate3d(20px, 15px, 100px);
+    transform: scale3d(1, 1, 2) rotateX(50deg);
+    transform: rotateY(180deg);
+} */
 
 @keyframes test-animation {
     0% {
