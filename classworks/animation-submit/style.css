@@ -1,0 +1,114 @@
+.container {
+    padding: 20px 100px;
+    background-color: rgb(199, 199, 199);
+    perspective: 1000px;
+    /* transform-style: preserve-3d; */
+}
+
+.block {
+    width: fit-content;
+    margin: 40px 0;
+    padding: 10px 10px;
+    background-color: indianred;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    /* transition: 2s ease; */
+    animation-name: block;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes block {
+    100% {
+        background-color: blue;
+        transform: rotate(360deg);
+        margin-left: 200px;
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    background-color: rgb(69, 46, 159);
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.container:hover .card {
+    transform: scale3d(1, 1, 1) rotateY(180deg);
+    /* transform: translate3d(0, 0, 100px) scale3d(1, 1, 1) rotateY(180deg); */
+    /* transform: translateZ(100px); */
+}
+
+.card p {
+    margin: 20px;
+    transition: 1s;
+    position: absolute;
+}
+
+.container:hover .card p {
+    opacity: 0;
+}
+
+.img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b928b0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 1s ease-out;
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+.short-line {
+    width: 10px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50px;
+    transform-origin: bottom;
+    transform: rotate(-45deg);
+}
+
+.long-line {
+    width: 10px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50px;
+    transform: rotate(45deg);
+}
+
+.container:hover .img {
+    opacity: 1;
+}
+
+.submit {
+    padding: 10px 10px;
+    background-color: indianred;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    transition: 0.6s;
+}
+
+.container:hover .submit {
+    transform: rotate(360deg);
+    border-radius: 50%;
+    background-color: rgba(157, 20, 100);
+}
