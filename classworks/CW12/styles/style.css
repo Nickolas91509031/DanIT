@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+html {
+    font-family: "Inter", sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery_wrapper_title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3.84px;
+    text-align: center;
+    margin-top: 41px;
+    margin-bottom: 40px;
+}
+
+.gallery_wrapper {
+    width: 890px;
+    display: flex;
+    gap: 30px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.gallery_wrapper_item:nth-of-type(even) {
+    border-radius: 30px;
+}
+
+.gallery_wrapper_item:hover::after {
+    content: "Order me";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 16px; /* 66.667% */
+    letter-spacing: 2.88px;
+    text-align: center;
+    padding-top: 29px;
+}
+
+.gallery_wrapper_item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery_wrapper_item.free::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 74px;
+    height: 75px;
+    background-image: url("../img/Group\ 1.png");
+}
