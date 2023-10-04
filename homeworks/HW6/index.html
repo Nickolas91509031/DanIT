@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Row Sushi</title>
+</head>
+<body>
+    <header>
+        <div class="upper_header">
+            <div class="page_logo_wrapper">
+                <img src="./img/logo.svg" alt="logo">
+                <p class="page_name">Raw Sushi</p>
+            </div>
+            <div class="balance_and_basket_wrapper">
+                <p class="balance">0,00 $</p>
+                <img src="./img/cart_icon.svg" alt="basket" class="basket">
+                <p class="amount_items_in_basket">1</p>
+            </div>
+        </div>
+        <div class="lower_header">
+            <div class="menu">Menu</div>
+            <div class="page_options">
+                <div class="page_options_item">About</div>
+                <div class="page_options_item">Types of Sushi</div>
+                <div class="page_options_item">Contact</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="page_title">Placing an order</h1>
+        <form action="" class="form">
+            <div class="left_wrapper">
+                <div class="customer_information">
+                    <p class="form-title">Your contact details</p>
+                    <label class="customer_information_label">
+                        <p class="customer_information_description">First name</p>
+                        <input type="text" placeholder="Your First Name">
+                    </label>
+                    <label class="customer_information_label">
+                        <p class="customer_information_description">Last name</p>
+                        <input type="text" placeholder="Your Last Name">
+                    </label>
+                    <label class="customer_information_label">
+                        <p class="customer_information_description">Mobile Number</p>
+                        <input type="text" placeholder="Your Mobile Number">
+                    </label>
+                    <label class="customer_information_label">
+                        <p class="customer_information_description">Email Address</p>
+                        <input type="text" placeholder="Your Email Address">
+                    </label>
+                </div>
+                <label class="label_wrapper">
+                    <p class="label_wrapper_description">Email Address</p>
+                    <textarea rows="4">Your Delivery Аddress
+                    </textarea>
+                </label>
+                <label class="delivery_day_wrapper">
+                    <p>Choose a convenient delivery day for you:</p>
+                    <input type="datetime" placeholder="dd/mm/yyyy">
+                </label>
+                <label class="label_wrapper">
+                    <p class="label_wrapper_description">Comment on the order</p>
+                    <textarea rows="4">Your Comment
+                    </textarea>
+                </label>
+                <div class="radio_label_wrapper">
+                    <div>
+                        <p class="radio_label_wrapper_question">Will you call to confirm the order?</p>
+                        <p class="radio_label_wrapper_onscription">We can call if you are ordering for the first time</p>
+                    </div>
+                    <div class="radio_wrapper">
+                        <label class="radio_label">
+                            <input type="radio">
+                            No, don't call me
+                        </label>
+                        <label class="radio_label">
+                            <input type="radio">
+                            Yes, call me
+                        </label>
+                    </div>
+                </div>
+                <div class="radio_label_wrapper">
+                    <div>
+                        <p class="radio_label_wrapper_question">Payment method</p>
+                        <p class="radio_label_wrapper_onscription"></p>
+                    </div>
+                    <div class="radio_wrapper">
+                        <label class="radio_label">
+                            <input type="radio">
+                            By card Visa, Mastercard or Privat24 by LiqPay
+                        </label>
+                        <label class="radio_label">
+                            <input type="radio">
+                            Terminal (payment by card upon receipt)
+                        </label>
+                        <label class="radio_label">
+                            <input type="radio">
+                            Cash on delivery
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="order_wrapper">
+                <p class="order_wrapper_title">Your order</p>
+                <div class="order_information_wrapper">
+                    <img src="./img/image (2).png" alt="order image">
+                    <div class="order_information">
+                        <p class="order_name">Premium Sashimi Variety Pack</p>
+                        <p class="order_description">(2) 8 Oz. Portions</p>
+                        <input type="number" placeholder="1">
+                    </div>
+                    <p class="price">42.95 $</p>
+                </div>
+                <div class="total_price_wrapper">
+                    <p class="total_price_onscription">Total</p>
+                    <p class="total_price">42.95 $</p>
+                </div>
+                <div class="agree_wrapper">
+                    <label class="agree_label">
+                        <input type="checkbox">
+                        I agree to the processing of personal data
+                    </label>
+                    <div class="submit_reset_btns">
+                        <button class="submit_btn" type="submit">Submit </button>
+                        <button class="reset_btn" type="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>© 2023</p>
+        <p>All rights reserved</p>
+    </footer>
+</body>
+</html>
