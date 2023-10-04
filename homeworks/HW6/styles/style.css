@@ -28,6 +28,7 @@ header {
     display: flex;
     gap: 8px;
     align-items: center;
+    text-decoration: none;
 }
 
 .page_name {
@@ -40,7 +41,11 @@ header {
     display: flex;
     gap: 24px;
     align-items: center;
+}
+
+.balance_and_basket_wrapper a {
     position: relative;
+    display: flex;
 }
 
 .balance {
@@ -52,6 +57,7 @@ header {
 .amount_items_in_basket {
     position: absolute;
     text-align: center;
+    top: 15px;
     right: 5px;
     color: #f8fdfe;
     width: 20px;
@@ -72,6 +78,8 @@ header {
 .menu {
     font-size: 16px;
     line-height: 24px; /* 150% */
+    text-decoration: none;
+    color: black;
 }
 
 .page_options {
@@ -80,8 +88,10 @@ header {
 }
 
 .page_options_item {
+    color: black;
     font-size: 16px;
     line-height: 24px; /* 150% */
+    text-decoration: none;
 }
 
 /* -----------------------MAIN---------------------------------- */
