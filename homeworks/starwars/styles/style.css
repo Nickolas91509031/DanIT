@@ -1,0 +1,66 @@
+html {
+    font-family: serif;
+    font-size: 50px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    perspective: 500px;
+}
+
+.text-wrapper {
+    height: 100%;
+    width: 80%;
+    transform: rotateX(40deg);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.text-wrapper p {
+    color: yellow;
+    animation-name: starwars;
+    animation-duration: 50s;
+    animation-timing-function: ease-in;
+    transform: translateY(400%);
+}
+
+@keyframes starwars {
+    100% {
+        transform: translateY(-2000%);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.name {
+    position: absolute;
+    color: yellow;
+    text-align: center;
+    font-size: 100px;
+    top: 350px;
+    animation-name: name;
+    animation-duration: 30s;
+    transform: rotateX(0);
+    opacity: 1;
+    animation-direction: reverse;
+}
+
+@keyframes name {
+    100% {
+        transform: rotateX(80deg);
+        opacity: 0;
+    }
+    10% {
+        transform: rotateX(80deg);
+        opacity: 0;
+    }
+}
