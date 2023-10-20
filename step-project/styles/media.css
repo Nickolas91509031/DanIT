@@ -1,0 +1,206 @@
+/* -------------------MEDIE---------------------------------- */
+
+.tablet {
+    display: none;
+}
+
+.desktop {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    /* ---------------------------HEADER------------------------ */
+    header {
+        padding: 16px 12px;
+    }
+
+    .tablet {
+        display: block;
+    }
+
+    /* -----------------------------MAIN------------------------ */
+
+    .tablet {
+        display: block;
+    }
+
+    .page-title-wrapper {
+        padding: 103px 0 104px 64px;
+        margin: 0 12px;
+    }
+
+    .onscription-wrapper {
+        width: 380px;
+    }
+
+    .onscription-wrapper__learning-links {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .program-list-wrapper {
+        gap: 40px;
+    }
+
+    .program-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .popular-courses-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .program-list-item__img {
+        width: 100%;
+    }
+
+    .program-list-item__content {
+        box-sizing: border-box;
+        height: 200px;
+        justify-content: space-between;
+    }
+
+    .popular-courses-list-item .program-list-item__content {
+        box-sizing: border-box;
+        height: 230px;
+        justify-content: space-between;
+    }
+
+    .education-wrapper {
+        width: 200px;
+    }
+
+    .popular-courses-list-item .education-wrapper {
+        width: auto;
+    }
+
+    .education-wrapper p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .topics-section {
+        margin: 0 12px;
+        gap: 40px;
+    }
+
+    .topics-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cooperation-section__companies-wrapper {
+        width: auto;
+    }
+
+    /* -------------------------------SECTION SOLUTION------------- */
+
+    .solution-section {
+        margin: 0 12px;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .solution-section__information-wrapper {
+        width: 360px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .phone {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+    .desktop {
+        display: flex;
+    }
+
+    /* ---------------------------HEADER------------------------ */
+
+    header {
+        padding: 30px 36px 0 36px;
+    }
+
+    .header-left-wrapper {
+        display: flex;
+        gap: 44px;
+        align-items: center;
+    }
+
+    /* -----------------------------MAIN------------------------ */
+
+    main {
+        gap: 80px;
+    }
+
+    .page-title-wrapper {
+        padding: 170px 0 184px 110px;
+        margin: 31px 36px 80px 36px;
+    }
+
+    .onscription-wrapper {
+        width: 512px;
+    }
+
+    .program-list-wrapper {
+        margin: 0 36px;
+    }
+
+    .program-list-item__img {
+        height: 270px;
+    }
+
+    .program-list-item__content {
+        height: 210px;
+    }
+
+    .program-list-title__author {
+        font-size: 20px;
+    }
+
+    .program-list-title__onscription {
+        font-size: 40px;
+    }
+
+    .program-list-title__description {
+        font-size: 20px;
+    }
+
+    .education-wrapper {
+        width: auto;
+    }
+
+    .education-wrapper p {
+        font-size: 16px;
+    }
+
+    .education-wrapper + p {
+        font-size: 24px;
+    }
+
+    .get-diplom-wrapper p {
+        font-size: 14px;
+    }
+
+    .topics-section {
+        margin: 0 36px;
+    }
+
+    /* -------------------------------SECTION SOLUTION------------- */
+
+    .solution-section {
+        margin: 0 36px;
+        gap: 72px;
+    }
+
+    .solution-section__information-wrapper {
+        width: 570px;
+    }
+
+    .solution-section__images-wrapper {
+        width: 590px;
+    }
+}

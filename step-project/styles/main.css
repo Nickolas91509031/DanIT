@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     padding: 118.5px 16px;
-    margin: 16px 8px 64px 8px;
+    margin: 0 8px;
     border-radius: 12px;
     background: #dbf3ed;
 }
@@ -73,6 +73,12 @@
 
 /* --------------------PROGRAM LIST WRAPPER------------------- */
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
 .program-list-wrapper {
     display: flex;
     flex-direction: column;
@@ -111,10 +117,22 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
-    margin-bottom: 64px;
+}
+
+.popular-courses-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
 }
 
 .program-list-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bababa;
+    border-radius: 15px;
+}
+
+.popular-courses-list-item {
     display: flex;
     flex-direction: column;
     border: 1px solid #bababa;
@@ -136,6 +154,14 @@
 .education-wrapper {
     display: flex;
     align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.popular-courses-list .education-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
     margin-bottom: 16px;
 }
@@ -168,104 +194,163 @@
     line-height: 120%; /* 16.8px */
 }
 
-/* -------------------MEDIE---------------------------------- */
-
-@media (min-width: 768px) {
-    .tablet {
-        display: block;
-    }
-
-    .page-title-wrapper {
-        padding: 103px 0 104px 64px;
-        margin: 16px 12px 64px 12px;
-    }
-
-    .onscription-wrapper {
-        width: 380px;
-    }
-
-    .onscription-wrapper__learning-links {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .program-list-wrapper {
-        gap: 40px;
-    }
-
-    .program-list {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-    }
-
-    .program-list-item__img {
-        width: 100%;
-    }
-
-    .program-list-item__content {
-        box-sizing: border-box;
-        height: 190px;
-        justify-content: space-between;
-    }
-
-    .education-wrapper {
-        width: 200px;
-    }
-
-    .education-wrapper p {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+.more-courses-link {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #0f8277;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%; /* 19.2px */
 }
 
-@media (min-width: 1024px) {
-    .page-title-wrapper {
-        padding: 170px 0 184px 110px;
-        margin: 31px 36px 80px 36px;
-    }
+/* --------------------------SECTION TOPICS------------------ */
 
-    .onscription-wrapper {
-        width: 512px;
-    }
+.topics-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0 8px;
+}
 
-    .program-list-wrapper {
-        margin: 0 36px;
-    }
+.topics-section__title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
 
-    .program-list-item__img {
-        height: 270px;
-    }
+.topics-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    row-gap: 32px;
+}
 
-    .program-list-item__content {
-        height: 210px;
-    }
+.topics-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
-    .program-list-title__author {
-        font-size: 20px;
-    }
+.topics-list-item__title {
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+}
 
-    .program-list-title__onscription {
-        font-size: 40px;
-    }
+.data-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    .program-list-title__description {
-        font-size: 20px;
-    }
+.data-wrapper > p:first-child {
+    color: #0f8277;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%; /* 19.2px */
+}
 
-    .education-wrapper {
-        width: auto;
-    }
+.data-wrapper > p:last-child {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+}
 
-    .education-wrapper p {
-        font-size: 16px;
-    }
+/* ---------------------------SECTION COOPERATION-------------- */
 
-    .education-wrapper + p {
-        font-size: 24px;
-    }
+.cooperation-section {
+    display: flex;
+    padding: 64px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    background: #dbf3ed;
+}
 
-    .get-diplom-wrapper p {
-        font-size: 14px;
-    }
+.cooperation-section__onscription {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.cooperation-section__companies-wrapper {
+    display: flex;
+    gap: 14px;
+    row-gap: 24px;
+    width: 350px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------------------------SECTION SOLUTION------------- */
+
+.solution-section {
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.solution-section__information-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.information-wrapper__title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.information-wrapper__onscription {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%; /* 21.6px */
+}
+
+.information-wrapper_contact-btn {
+    text-decoration: none;
+    border-radius: 4px;
+    background: #0f8277;
+    padding: 10px 12px;
+    color: #eee;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 120%; /* 16.8px */
+}
+
+.solution-section__images-wrapper {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.solution-section__images-wrapper div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-border {
+    border-right: 1px solid #bababa;
+}
+
+.bottom-border {
+    border-bottom: 1px solid #bababa;
 }
