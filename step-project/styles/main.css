@@ -22,14 +22,12 @@
 }
 
 .onscription-wrapper__onscription {
-    color: #000;
     font-size: 46px;
     font-weight: 700;
     line-height: 120%; /* 55.2px */
 }
 
 .onscription-wrapper__description {
-    color: #000;
     font-size: 18px;
     font-weight: 600;
     line-height: 120%; /* 21.6px */
@@ -102,14 +100,12 @@ main {
 }
 
 .program-list-title__onscription {
-    color: #000;
     font-size: 30px;
     font-weight: 700;
     line-height: 120%; /* 36px */
 }
 
 .program-list-title__description {
-    color: #000;
     font-size: 16px;
     font-weight: 500;
     line-height: 120%; /* 19.2px */
@@ -169,14 +165,12 @@ main {
 }
 
 .education-wrapper p {
-    color: #000;
     font-size: 14px;
     font-weight: 500;
     line-height: 120%; /* 16.8px */
 }
 
 .education-wrapper + p {
-    color: #000;
     font-size: 18px;
     font-weight: 700;
     line-height: 120%; /* 21.6px */
@@ -218,7 +212,6 @@ main {
 }
 
 .topics-section__title {
-    color: #000;
     font-size: 30px;
     font-weight: 700;
     line-height: 120%; /* 36px */
@@ -238,7 +231,6 @@ main {
 }
 
 .topics-list-item__title {
-    color: #000;
     font-size: 18px;
     font-weight: 700;
     line-height: 120%; /* 21.6px */
@@ -258,7 +250,6 @@ main {
 }
 
 .data-wrapper > p:last-child {
-    color: #000;
     font-size: 14px;
     font-weight: 500;
     line-height: 120%; /* 16.8px */
@@ -277,7 +268,6 @@ main {
 }
 
 .cooperation-section__onscription {
-    color: #000;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -310,14 +300,12 @@ main {
 }
 
 .information-wrapper__title {
-    color: #000;
     font-size: 30px;
     font-weight: 700;
     line-height: 120%; /* 36px */
 }
 
 .information-wrapper__onscription {
-    color: #000;
     font-size: 18px;
     font-weight: 600;
     line-height: 120%; /* 21.6px */
@@ -372,7 +360,6 @@ main {
 }
 
 .section-price-list__title {
-    color: #000;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -396,7 +383,6 @@ main {
 }
 
 .information-wrapper__name {
-    color: #000;
     text-align: center;
     font-size: 18px;
     font-weight: 700;
@@ -404,7 +390,6 @@ main {
 }
 
 .information-wrapper__description {
-    color: #000;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
@@ -419,7 +404,6 @@ main {
 }
 
 .information-wrapper__price {
-    color: #000;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -427,7 +411,6 @@ main {
 }
 
 .information-wrapper__duration {
-    color: #000;
     font-size: 14px;
     font-weight: 500;
     line-height: 120%; /* 16.8px */
@@ -544,7 +527,6 @@ main {
 }
 
 .section-students-photo_title {
-    color: #000;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -602,4 +584,78 @@ main {
 
 .item-9 {
     grid-area: i;
+}
+
+/* ----------------------SECTION CONTACT US-------------------- */
+
+.form-contact-us {
+    padding: 64px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: #dbf3ed;
+}
+
+.section-contact-us__information-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-contact-us__information-wrapper__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.section-contact-us__information-wrapper__description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+}
+
+.section-contact-us__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+}
+
+.section-contact-us__input {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #0f8277;
+    outline: none;
+    color: #8e8e8e;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px; /* 171.429% */
+}
+
+.section-contact-us__textarea {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #0f8277;
+    outline: none;
+    color: #8e8e8e;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px; /* 171.429% */
+    resize: none;
+}
+
+.section-contact-us__send-btn {
+    padding: 12px;
+    border-radius: 4px;
+    background: #0f8277;
+    border: none;
+    text-decoration: none;
+    color: #f6fdff;
+    text-align: center;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.64px;
 }

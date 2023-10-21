@@ -143,6 +143,44 @@
             "b i i g"
             "c d e f";
     }
+
+    /* ----------------------SECTION CONTACT US-------------------- */
+
+    .form-contact-us {
+        padding: 64px 12px;
+    }
+
+    .section-contact-us__send-btn {
+        width: 170px;
+    }
+
+    /* ---------------------FOOTER---------------------------- */
+
+    footer {
+        margin: 32px 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: unset;
+    }
+
+    .footer-description {
+        width: 306px;
+        align-items: flex-start;
+    }
+
+    .footer-description-logo {
+        text-align: start;
+    }
+
+    .footer-description__description {
+        text-align: start;
+    }
+
+    .footer-links {
+        gap: unset;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -289,5 +327,58 @@
 
     .section-students-photo {
         margin: 0 36px;
+    }
+
+    /* ----------------------SECTION CONTACT US-------------------- */
+
+    .form-contact-us {
+        padding: 80px 256px;
+    }
+
+    .section-contact-us__information-wrapper__title {
+        font-size: 40px;
+    }
+
+    .section-contact-us__information-wrapper__description {
+        font-size: 20px;
+    }
+
+    .section-contact-us__label {
+        font-size: 22px;
+    }
+
+    .section-contact-us__input {
+        font-size: 16px;
+    }
+
+    .section-contact-us__textarea {
+        font-size: 16px;
+    }
+
+    .section-contact-us__send-btn {
+        width: 196px;
+        font-size: 18px;
+    }
+
+    /* ---------------------FOOTER-------------------------- */
+
+    footer {
+        margin: 64px 36px;
+    }
+
+    .footer-description-logo {
+        font-size: 32px;
+    }
+
+    .footer-description__description {
+        font-size: 16px;
+    }
+
+    .footer-links__social-wrapper img {
+        width: 32px;
+    }
+
+    .footer-sign {
+        font-size: 16px;
     }
 }
