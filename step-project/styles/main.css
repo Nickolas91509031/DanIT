@@ -1,5 +1,7 @@
 /* ---------------------------------MAIN--------------------- */
 
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap");
+
 /* ------------------------PAGE TITLE WRAPPER----------------- */
 
 .page-title-wrapper {
@@ -334,7 +336,6 @@ main {
 }
 
 .solution-section__images-wrapper {
-    border: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -353,4 +354,252 @@ main {
 
 .bottom-border {
     border-bottom: 1px solid #bababa;
+}
+
+/* -------------------------SECTION PRICE LIST---------------- */
+
+.section-price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 64px 8px 80px 8px;
+    background: #dbf3ed;
+}
+
+.price-list {
+    display: grid;
+    gap: 32px;
+}
+
+.section-price-list__title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.price-list-item {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 24px;
+    border: 1px solid #0f8277;
+    background-color: #fdfdfd;
+}
+
+.price-list-item__information-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.information-wrapper__name {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+}
+
+.information-wrapper__description {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+}
+
+.information-wrapper__price-duration {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-wrapper__price {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.information-wrapper__duration {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+    text-transform: uppercase;
+}
+
+.get-started-link__wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.information-wrapper__get-started-link {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+    background: #0f8277;
+    color: #f6fdff;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+}
+
+.price-list-item__line {
+    height: 2px;
+    border-radius: 80px;
+    background: #0f8277;
+}
+
+.price-list-item__advantages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.advantages-list-item {
+    display: flex;
+    gap: 16px;
+}
+
+.advantages-list-item img {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f8277;
+    border-radius: 50%;
+}
+
+.advantages-list-item__description {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+}
+
+/* -----------------------------PRO CARD----------------------- */
+
+.price-list-item.pro {
+    border: 1px solid #0f8277;
+    background: #0f8277;
+}
+
+.pro .information-wrapper__name {
+    color: #fff;
+}
+
+.pro .information-wrapper__description {
+    color: #fff;
+}
+
+.pro .information-wrapper__price {
+    color: #fff;
+}
+
+.pro .information-wrapper__duration {
+    color: #fff;
+}
+
+.pro .information-wrapper__get-started-link {
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    background: #0f8277;
+}
+
+.pro .price-list-item__line {
+    height: 1px;
+    border-radius: 80px;
+    background: #fff;
+}
+
+.pro .advantages-list-item img {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.pro .advantages-list-item__description {
+    color: #fff;
+}
+
+/* --------------------SECTION STUDENTS PHOTO ------------------*/
+
+.section-students-photo {
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.section-students-photo_title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+}
+
+.students-photo-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 24px;
+    grid-template-areas:
+        "a c"
+        "b i"
+        "d d"
+        "d d"
+        "e g"
+        "h f";
+}
+
+.students-photo-wrapper img {
+    width: 100%;
+}
+
+.item-1 {
+    grid-area: a;
+}
+
+.item-2 {
+    grid-area: b;
+}
+
+.item-3 {
+    grid-area: c;
+}
+
+.item-4 {
+    grid-area: d;
+}
+
+.item-5 {
+    grid-area: e;
+}
+
+.item-6 {
+    grid-area: f;
+}
+.item-7 {
+    grid-area: g;
+}
+
+.item-8 {
+    grid-area: h;
+}
+
+.item-9 {
+    grid-area: i;
 }
