@@ -13,21 +13,56 @@ header {
     align-items: center;
 }
 
+.header-left-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 header > div {
     display: flex;
     gap: 32px;
 }
 
 .menu-btn {
+    border: none;
     background-color: #0f8277;
     padding: 10px 8px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
     border-radius: 4px;
+    z-index: 2;
+}
+
+.upper-burger-line {
+    transition: 0.6s;
+}
+
+.menu-btn:focus .upper-burger-line {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.middle-burger-line {
+    transition: 1s;
+}
+
+.menu-btn:focus .middle-burger-line {
+    transform: rotate(225deg);
+}
+
+.lower-burger-line {
+    transition: 0.6s;
+}
+
+.menu-btn:focus .lower-burger-line {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .page-name {
+    text-decoration: none;
+    color: #000;
     font-size: 22px;
     font-weight: 700;
     line-height: 120%; /* 26.4px */
