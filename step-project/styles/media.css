@@ -18,11 +18,11 @@
         display: block;
     }
 
-    /* -----------------------------MAIN------------------------ */
-
-    .tablet {
-        display: block;
+    .search-wrapper {
+        display: none;
     }
+
+    /* -----------------------------MAIN------------------------ */
 
     .page-title-wrapper {
         padding: 103px 0 104px 64px;

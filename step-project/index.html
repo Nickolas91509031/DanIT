@@ -11,10 +11,45 @@
     <header>
         <div class="header-left-wrapper">
             <button class="menu-btn phone">
+                <input class="menu-input" type="checkbox">
                 <img class="upper-burger-line" src="./img/menu-line.svg" alt="" class="menu-btn_lines">
                 <img class="middle-burger-line" src="./img/menu-line.svg" alt="" class="menu-btn_lines">
                 <img class="lower-burger-line" src="./img/menu-line.svg" alt="" class="menu-btn_lines">
             </button>
+            <div class="menu-wrapper">
+                <div class="menu-container">
+                    <a href="/" class="menu-logo">e-Tutoria</a>
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="What do you want to learn?" class="search-wrapper__text">
+                        <button class="search-btn-link">
+                            <img src="./img/search-btn.svg" alt="search button">
+                        </button>
+                    </div>
+                    <div class="nav-menu">
+                        <a href="/" class="nav-menu__item">Courses</a>
+                        <a href="/" class="nav-menu__item">Corporate training</a>
+                    </div>
+                    <div class="menu-container__line"></div>
+                    <div class="goals-wrapper">
+                        <p class="goals-wrapper__name">Goals</p>
+                        <div class="goal-list">
+                            <a href="/" class="goal-list__item">Take a free course</a>
+                            <a href="/" class="goal-list__item">Get a diploma</a>
+                            <a href="/" class="goal-list__item">Get a certificate</a>
+                            <a href="/" class="goal-list__item">Get a new profession</a>
+                        </div>
+                    </div>
+                    <div class="themes-wrapper">
+                        <p class="themes-wrapper__name">Themes</p>
+                        <div class="themes-list">
+                            <a href="/" class="themes-list__item">Data science</a>
+                            <a href="/" class="themes-list__item">Business</a>
+                            <a href="/" class="themes-list__item">Computer science</a>
+                            <a href="/" class="themes-list__item">Information Technology</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="/" class="page-name">e-Tutoria</a>
             <select class="explore-options-wrapper desktop">
                 <option>Explore</option>
@@ -415,15 +450,15 @@
             </div>
             <label class="section-contact-us__label">
                 Name
-                <input type="text" class="section-contact-us__input" placeholder="Enter your Name">
+                <input type="text" class="section-contact-us__input" placeholder="Enter your Name" required pattern="[A-Za-z._%+-]">
             </label>
             <label class="section-contact-us__label">
                 Email Address
-                <input type="text" class="section-contact-us__input" placeholder="Enter your Email">
+                <input type="email" class="section-contact-us__input" placeholder="Enter your Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
             </label>
             <label class="section-contact-us__label">
                 Your message
-                <textarea placeholder="Enter your message" rows="5" class="section-contact-us__textarea"></textarea>
+                <textarea placeholder="Enter your message" rows="5" class="section-contact-us__textarea" required></textarea>
             </label>
             <button class="section-contact-us__send-btn">Send</button>
         </form>
