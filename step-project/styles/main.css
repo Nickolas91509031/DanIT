@@ -202,6 +202,14 @@ main {
     line-height: 120%; /* 19.2px */
 }
 
+.more-courses-link::after {
+    display: block;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-image: url("../img/arrow (3).svg");
+}
+
 /* --------------------------SECTION TOPICS------------------ */
 
 .topics-section {
@@ -437,7 +445,8 @@ main {
     letter-spacing: 0.64px;
 }
 
-.price-list-item__line {
+.price-list-item__information-wrapper::after {
+    content: "";
     height: 2px;
     border-radius: 80px;
     background: #0f8277;
@@ -501,7 +510,8 @@ main {
     background: #0f8277;
 }
 
-.pro .price-list-item__line {
+.pro .price-list-item__information-wrapper::after {
+    content: "";
     height: 1px;
     border-radius: 80px;
     background: #fff;
