@@ -1,25 +1,24 @@
 /* -------------------MEDIE---------------------------------- */
 
-.tablet {
-    display: none;
-}
-
-.desktop {
+.page-title-wrapper__img,
+.explore-options-wrapper,
+.search-wrapper,
+.search-btn-link--tablet-version,
+.courses-wrapper,
+.cooperation-section__companies-wrapper--desktop-version,
+.solution-section__images-wrapper--desktop-version {
     display: none;
 }
 
 @media (min-width: 768px) {
+    .search-btn-link--tablet-version,
+    .page-title-wrapper__img {
+        display: flex;
+    }
+
     /* ---------------------------HEADER------------------------ */
     header {
         padding: 16px 12px;
-    }
-
-    .tablet {
-        display: block;
-    }
-
-    .search-wrapper {
-        display: none;
     }
 
     /* -----------------------------MAIN------------------------ */
@@ -184,14 +183,22 @@
 }
 
 @media (min-width: 1024px) {
-    .phone {
+    .menu-btn,
+    .search-btn-link--tablet-version,
+    .cooperation-section__companies-wrapper,
+    .solution-section__images-wrapper {
         display: none;
     }
-    .tablet {
-        display: none;
-    }
-    .desktop {
+
+    .explore-options-wrapper,
+    .search-wrapper,
+    .courses-wrapper,
+    .cooperation-section__companies-wrapper--desktop-version {
         display: flex;
+    }
+
+    .solution-section__images-wrapper--desktop-version {
+        display: grid;
     }
 
     /* ---------------------------HEADER------------------------ */
@@ -261,8 +268,21 @@
         font-size: 14px;
     }
 
+    /* --------------------TOPICS SECTION----------------------- */
+
     .topics-section {
         margin: 0 36px;
+    }
+
+    /* -----------------------COOPERATION SECTION--------------- */
+
+    .cooperation-section {
+        padding: 80px 36px;
+    }
+
+    .cooperation-section__companies-wrapper--desktop-version {
+        width: 100%;
+        justify-content: space-between;
     }
 
     /* -------------------------------SECTION SOLUTION------------- */
@@ -283,10 +303,6 @@
 
     .information-wrapper_contact-btn {
         width: 131px;
-    }
-
-    .solution-section__images-wrapper.desktop {
-        display: grid;
     }
 
     /* -------------------------SECTION PRICE LIST---------------- */

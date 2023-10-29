@@ -82,7 +82,7 @@ header > div {
     height: 1333px;
     background: rgba(14, 14, 14, 0.25);
     z-index: 3;
-    display: block;
+    display: none;
 }
 
 .menu-container {
@@ -202,10 +202,15 @@ header > div {
     outline: none;
 }
 
-.search-btn-link {
+.search-btn-link,
+.search-btn-link--tablet-version {
     background: #0f8277;
     padding: 10px;
     border: none;
+}
+
+.search-btn-link--tablet-version {
+    border-radius: 5px;
 }
 
 .header-right-wrapper {

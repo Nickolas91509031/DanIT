@@ -203,7 +203,6 @@ main {
 }
 
 .more-courses-link::after {
-    display: block;
     content: "";
     height: 20px;
     width: 20px;
@@ -330,26 +329,40 @@ main {
     font-weight: 700;
     line-height: 120%; /* 16.8px */
 }
-
+.solution-section__images-wrapper--desktop-version,
 .solution-section__images-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
-.solution-section__images-wrapper div {
+.solution-section__images-wrapper div,
+.solution-section__images-wrapper--desktop-version div {
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.right-border {
+.solution-section__images-wrapper div:nth-child(3n + 1),
+.solution-section__images-wrapper div:nth-child(3n + 2),
+.solution-section__images-wrapper--desktop-version div:nth-child(3n + 1),
+.solution-section__images-wrapper--desktop-version div:nth-child(3n + 2) {
     border-right: 1px solid #bababa;
 }
 
-.bottom-border {
-    border-bottom: 1px solid #bababa;
+.solution-section__images-wrapper div,
+.solution-section__images-wrapper--desktop-version div {
+    border-top: 1px solid #bababa;
+}
+
+.solution-section__images-wrapper div:nth-child(1),
+.solution-section__images-wrapper div:nth-child(2),
+.solution-section__images-wrapper div:nth-child(3),
+.solution-section__images-wrapper--desktop-version div:nth-child(1),
+.solution-section__images-wrapper--desktop-version div:nth-child(2),
+.solution-section__images-wrapper--desktop-version div:nth-child(3) {
+    border-top: none;
 }
 
 /* -------------------------SECTION PRICE LIST---------------- */
@@ -388,6 +401,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #0f8277;
 }
 
 .information-wrapper__name {
@@ -445,13 +460,6 @@ main {
     letter-spacing: 0.64px;
 }
 
-.price-list-item__information-wrapper::after {
-    content: "";
-    height: 2px;
-    border-radius: 80px;
-    background: #0f8277;
-}
-
 .price-list-item__advantages-list {
     display: flex;
     flex-direction: column;
@@ -463,13 +471,11 @@ main {
     gap: 16px;
 }
 
-.advantages-list-item img {
-    width: 16px;
-    height: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #0f8277;
+.advantages-list-item__bullit {
+    height: 14px;
+    width: 14px;
+    padding: 2px;
+    background-color: #0f8277;
     border-radius: 50%;
 }
 
@@ -485,6 +491,10 @@ main {
 .price-list-item.pro {
     border: 1px solid #0f8277;
     background: #0f8277;
+}
+
+.pro .price-list-item__information-wrapper {
+    border-bottom: 1px solid #fff;
 }
 
 .pro .information-wrapper__name {
@@ -510,17 +520,8 @@ main {
     background: #0f8277;
 }
 
-.pro .price-list-item__information-wrapper::after {
-    content: "";
-    height: 1px;
-    border-radius: 80px;
-    background: #fff;
-}
-
-.pro .advantages-list-item img {
+.pro .advantages-list-item__bullit {
     background-color: #fff;
-    border-radius: 50%;
-    padding: 1px;
 }
 
 .pro .advantages-list-item__description {
