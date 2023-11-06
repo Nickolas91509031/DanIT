@@ -111,12 +111,7 @@ main {
     line-height: 120%; /* 19.2px */
 }
 
-.program-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-}
-
+.program-list,
 .popular-courses-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -165,6 +160,7 @@ main {
 }
 
 .education-wrapper p {
+    text-decoration: none;
     font-size: 14px;
     font-weight: 500;
     line-height: 120%; /* 16.8px */
