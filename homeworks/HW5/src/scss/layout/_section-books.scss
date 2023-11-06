@@ -1,0 +1,141 @@
+.section_books {
+    background-color: #eeeeef;
+    padding: 136px 52px 120px;
+
+    .section_books-title {
+        color: #1f1f1f;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px; /* 125% */
+        padding-bottom: 23px;
+        border-bottom: 1px solid #a8a8a8;
+    }
+
+    .books_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 32px;
+        padding-top: 24px;
+
+        .book_wrapper {
+            padding: 32px;
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            border: 1px solid #a8a8a8;
+
+            .book_wrapper-img_wrapper {
+                position: relative;
+
+                & img {
+                    padding: 0 32px;
+                }
+
+                .inscription_wrapper {
+                    display: flex;
+                    gap: 4px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    & p {
+                        color: #f8fdfe;
+                        text-align: center;
+                        font-size: 16px;
+                        line-height: 24px; /* 150% */
+                        width: fit-content;
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                    }
+
+                    .book_wrapper-inscription_hit {
+                        background-color: #4200ff;
+                    }
+
+                    .book_wrapper-inscription_new {
+                        background-color: #af39e7;
+                    }
+
+                    .book_wrapper-inscription_discount {
+                        background-color: #ea33c0;
+                    }
+                }
+            }
+
+            .book_wrapper-name_and_price_of_book {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .name_and_author_of_book {
+                    display: flex;
+                    flex-direction: column;
+
+                    .name_of_book {
+                        color: #1f1f1f;
+                        text-overflow: ellipsis;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 28px; /* 140% */
+                        border-bottom: 1px solid #a8a8a8;
+                    }
+
+                    .author_of_book {
+                        color: #8e8e8e;
+                        font-size: 16px;
+                        line-height: 24px; /* 150% */
+                    }
+                }
+
+                .book_price_wrapper {
+                    display: flex;
+                    gap: 24px;
+
+                    .price_of_book {
+                        color: #e90000;
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 32px; /* 133.333% */
+                    }
+
+                    .early_book_price {
+                        color: #8e8e8e;
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 32px; /* 133.333% */
+                        text-decoration: line-through;
+                    }
+                }
+            }
+
+            .btn_add_to_basket {
+                background-color: #4c394e;
+                padding: 8px 24px;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                color: #f8fdfe;
+                border-radius: 4px;
+            }
+
+            .btn_end_up {
+                background-color: #4d762d;
+                padding: 8px 24px;
+                border: none;
+                color: #f8fdfe;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .btn_chat {
+        border: 0;
+
+        & img {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+        }
+    }
+}

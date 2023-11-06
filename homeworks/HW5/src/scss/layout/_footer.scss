@@ -1,0 +1,12 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4c394e;
+    padding: 32px 52px;
+
+    & p {
+        color: #f8fdfe;
+        font-size: 16px;
+        line-height: 24px; /* 150% */
+    }
+}
