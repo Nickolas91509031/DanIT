@@ -1,0 +1,83 @@
+.header {
+    position: fixed;
+    z-index: 1;
+
+    .page_logo_wrapper {
+        box-sizing: border-box;
+        width: 100vw;
+        background-color: $heading-background-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 52px;
+        top: 0;
+    }
+
+    .page_logo_and_name {
+        display: flex;
+        align-items: center;
+        color: $heading-color;
+        font-size: 24px;
+        font-weight: 700;
+        text-decoration: none;
+        gap: 4px;
+    }
+
+    .header_balance_and_basket {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .balance {
+            color: $heading-color;
+            line-height: 24px;
+        }
+
+        .btn_basket {
+            border: none;
+            background-color: $heading-background-color;
+            display: flex;
+            flex-direction: column;
+            gap: 3.33px;
+            position: relative;
+
+            .amount_in_the_basket {
+                position: absolute;
+                top: 8px;
+                left: 11px;
+                width: 30px;
+                text-align: center;
+                font-size: 12px;
+            }
+
+            .btn_basket-bottom_part_of_pasket_img {
+                display: flex;
+                gap: 5px;
+                padding-left: 7px;
+            }
+        }
+    }
+
+    .page_function {
+        box-sizing: border-box;
+        top: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 52px;
+        width: 100vw;
+        background-color: #fff;
+
+        & a {
+            color: #000;
+            text-decoration: none;
+            line-height: 24px;
+        }
+
+        & div {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+}
