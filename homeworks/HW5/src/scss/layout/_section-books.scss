@@ -1,38 +1,36 @@
-.section_books {
-    background-color: #eeeeef;
+.section-books {
+    background-color: $section-book-background-color;
     padding: 136px 52px 120px;
 
-    .section_books-title {
+    &__title {
         color: #1f1f1f;
         font-size: 32px;
         font-weight: 600;
         line-height: 40px; /* 125% */
         padding-bottom: 23px;
-        border-bottom: 1px solid #a8a8a8;
+        border-bottom: 1px solid $border-line-color;
     }
 
-    .books_wrapper {
-        display: flex;
+    &__books-wrapper {
+        @include flex(start, space-between, row);
         flex-wrap: wrap;
-        justify-content: space-between;
         row-gap: 32px;
         padding-top: 24px;
 
-        .book_wrapper {
+        .section-books__book-wrapper {
             padding: 32px;
-            display: flex;
+            @include flex(start, start, column);
             gap: 16px;
-            flex-direction: column;
-            border: 1px solid #a8a8a8;
+            border: 1px solid $border-line-color;
 
-            .book_wrapper-img_wrapper {
+            .section-books__inscription-wrapper {
                 position: relative;
 
                 & img {
                     padding: 0 32px;
                 }
 
-                .inscription_wrapper {
+                .section-books__inscription {
                     display: flex;
                     gap: 4px;
                     position: absolute;
@@ -40,7 +38,7 @@
                     left: 0;
 
                     & p {
-                        color: #f8fdfe;
+                        color: $light-color;
                         text-align: center;
                         font-size: 16px;
                         line-height: 24px; /* 150% */
@@ -49,58 +47,59 @@
                         border-radius: 4px;
                     }
 
-                    .book_wrapper-inscription_hit {
+                    .inscription_hit {
                         background-color: #4200ff;
                     }
 
-                    .book_wrapper-inscription_new {
+                    .inscription_new {
                         background-color: #af39e7;
                     }
 
-                    .book_wrapper-inscription_discount {
+                    .inscription_discount {
                         background-color: #ea33c0;
                     }
                 }
             }
 
-            .book_wrapper-name_and_price_of_book {
-                display: flex;
-                flex-direction: column;
+            .section-books__name-and-price-wrapper {
+                width: 100%;
+                @include flex(start, start, column);
                 gap: 8px;
 
-                .name_and_author_of_book {
-                    display: flex;
-                    flex-direction: column;
+                .section-books__name-and-author-of-book {
+                    width: 100%;
+                    @include flex(start, start, column);
 
-                    .name_of_book {
-                        color: #1f1f1f;
+                    .section-books__book-name {
+                        width: 100%;
+                        color: $section-book-primary-color;
                         text-overflow: ellipsis;
                         font-size: 20px;
                         font-weight: 700;
                         line-height: 28px; /* 140% */
-                        border-bottom: 1px solid #a8a8a8;
+                        border-bottom: 1px solid $border-line-color;
                     }
 
-                    .author_of_book {
-                        color: #8e8e8e;
+                    .section-books__book-author {
+                        color: $section-book-secondary-color;
                         font-size: 16px;
                         line-height: 24px; /* 150% */
                     }
                 }
 
-                .book_price_wrapper {
+                .section-books__book-price-wrapper {
                     display: flex;
                     gap: 24px;
 
-                    .price_of_book {
-                        color: #e90000;
+                    .section-books__book-price {
+                        color: $book-price-color;
                         font-size: 24px;
                         font-weight: 500;
                         line-height: 32px; /* 133.333% */
                     }
 
-                    .early_book_price {
-                        color: #8e8e8e;
+                    .section-books__early_book_price {
+                        color: $early-book-price-color;
                         font-size: 24px;
                         font-weight: 500;
                         line-height: 32px; /* 133.333% */
@@ -109,33 +108,24 @@
                 }
             }
 
-            .btn_add_to_basket {
-                background-color: #4c394e;
-                padding: 8px 24px;
-                justify-content: center;
-                align-items: center;
-                border: none;
-                color: #f8fdfe;
-                border-radius: 4px;
-            }
-
-            .btn_end_up {
-                background-color: #4d762d;
+            .section-books__btn-add-to-basket {
+                width: 100%;
+                background-color: $btn-add-to-basket-background-color;
                 padding: 8px 24px;
                 border: none;
-                color: #f8fdfe;
+                color: $light-color;
+                border-radius: 4px;
+                text-align: center;
+            }
+
+            .section-books__btn-end-up {
+                width: 100%;
+                background-color: $btn-end-up-background-color;
+                padding: 8px 24px;
+                border: none;
+                color: $light-color;
                 border-radius: 4px;
             }
-        }
-    }
-
-    .btn_chat {
-        border: 0;
-
-        & img {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
         }
     }
 }

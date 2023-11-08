@@ -1,11 +1,10 @@
 footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #4c394e;
+    @include flex(start, space-between, row);
+    background-color: $footer-background-color;
     padding: 32px 52px;
 
     & p {
-        color: #f8fdfe;
+        color: $light-color;
         font-size: 16px;
         line-height: 24px; /* 150% */
     }
