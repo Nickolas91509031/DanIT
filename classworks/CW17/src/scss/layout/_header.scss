@@ -1,0 +1,60 @@
+
+.header {
+    width: 100%;
+    @include flex(center, end, row);
+    position: fixed;
+    top: 23px;
+    right: 28px;
+
+    @media (min-width: $bp-md) {
+        @include flex(center, center, row);
+        padding: 15px 0;
+        right: 0;
+    }
+
+    &__menu-burger {
+        background-color: $background-primary;
+        width: 44px;
+        height: 37px;
+        display: flex;
+        @include flex(center, center, column);
+        gap: 3px;
+        border: none;
+
+        & span {
+            display: block;
+            width: 17px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        @media (min-width: $bp-md) {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        display: none;
+
+        @media (min-width: $bp-md) {
+            @include flex(center, space-between, row);
+            gap: 34px;
+
+            &-item {
+                color: $text-color-primary;
+                font-size: 11px;
+                line-height: 22px; /* 200% */
+                letter-spacing: 1.1px;
+                text-transform: uppercase;
+            }
+
+            &-item--aktive {
+                color: #57a4a4;
+                font-size: 11px;
+                line-height: 22px; /* 200% */
+                letter-spacing: 1.1px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
