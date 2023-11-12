@@ -1,0 +1,53 @@
+.section-works__oval {
+    @include flex(center, center, row);
+
+    & div:first-child {
+        top: 63px;
+        right: -140px;
+        position: absolute;
+        width: 168px;
+        height: 320px;
+        border-radius: 50%;
+        border: 1px solid #737373;
+        transform: rotate(45deg);
+
+        @media (min-width: $bp-md) {
+            width: 268px;
+            height: 512px;
+            top: -20px;
+            right: -180px;
+        }
+
+        @media (min-width: $bp-lg) {
+            width: 268px;
+            height: 512px;
+            top: -20px;
+            right: -90px;
+        }
+    }
+
+    & div:last-child {
+        top: 63px;
+        right: -140px;
+        position: absolute;
+        width: 168px;
+        height: 320px;
+        border-radius: 50%;
+        border: 1px solid #737373;
+        transform: rotate(-45deg);
+
+        @media (min-width: $bp-md) {
+            width: 268px;
+            height: 512px;
+            top: -20px;
+            right: -180px;
+        }
+
+        @media (min-width: $bp-lg) {
+            width: 268px;
+            height: 512px;
+            top: -20px;
+            right: -90px;
+        }
+    }
+}

@@ -1,0 +1,168 @@
+.section-projects {
+    padding: 52px 16px;
+    background: $section-projects-background-color;
+    @include flex(start, start, column);
+    gap: 63px;
+
+    @media (min-width: $bp-md) {
+        padding: 52px 32px;
+        padding-bottom: 122px;
+    }
+
+    @media (min-width: $bp-lg) {
+        padding: 86px 195px;
+    }
+}
+
+.section-projects__banking-app-wrapper {
+    padding: 16px;
+    @include flex(start, start, column);
+    gap: 20px;
+    border-radius: 24px;
+    background-color: $mobile-app-wrapper-background-color;
+
+    @media (min-width: $bp-md) {
+        padding: 24px 20px;
+    }
+
+    & img:nth-child(1) {
+        display: block;
+        @media (min-width: $bp-md) {
+            display: none;
+        }
+        @media (min-width: $bp-lg) {
+            display: none;
+        }
+    }
+
+    & img:nth-child(2) {
+        display: none;
+        @media (min-width: $bp-md) {
+            display: block;
+        }
+        @media (min-width: $bp-lg) {
+            display: none;
+        }
+    }
+
+    & img:nth-child(3) {
+        display: none;
+        @media (min-width: $bp-md) {
+            display: none;
+        }
+        @media (min-width: $bp-lg) {
+            display: block;
+        }
+    }
+
+    .section-projects__banking-app-inscription {
+        @include flex(stasrt, start, column);
+        gap: 22px;
+
+        & p:first-child {
+            color: #565656;
+            font-size: 32px;
+            font-weight: 600;
+
+            @media (min-width: $bp-md) {
+                font-size: 40px;
+            }
+        }
+
+        & p:last-child {
+            color: #000;
+            font-family: Manrope;
+            font-size: 15px;
+            font-weight: 700;
+
+            @media (min-width: $bp-md) {
+                font-size: 16px;
+                width: 580px;
+            }
+        }
+    }
+}
+
+.section-projects__mobile-app-wrapper {
+    @include flex;
+    gap: 40px;
+
+    .section-projects__mobile-app-item {
+        @include flex(start, start, column);
+        gap: 20px;
+        background-color: $mobile-app-wrapper-background-color;
+        padding: 12px;
+        border-radius: 24px;
+
+        @media (min-width: $bp-md) {
+            padding: 20px;
+        }
+
+        .section-projects__mobile-app-img-wrapper {
+            position: relative;
+
+            & > img {
+                width: 319px;
+                height: 363px;
+                border-radius: 13px;
+                object-fit: cover;
+
+                @media (min-width: $bp-md) {
+                    width: 293px;
+                    height: 448px;
+                }
+
+                @media (min-width: $bp-lg) {
+                    width: 285px;
+                    height: 338px;
+                }
+            }
+
+            .arrow-up {
+                @include flex(center, center, row);
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+        }
+
+        .section-projects__mobile-app-inscription {
+            @include flex(start, start, column);
+            gap: 22px;
+
+            & p:first-child {
+                color: #565656;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            & p:last-child {
+                color: #000;
+                font-family: Manrope;
+                font-size: 15px;
+                font-weight: 500;
+                @media (min-width: $bp-lg) {
+                    width: 285px;
+                }
+            }
+        }
+    }
+
+    .section-projects__mobile-app-item:nth-child(1) {
+        display: none;
+        @media (min-width: $bp-md) {
+            display: flex;
+        }
+    }
+
+    .section-projects__mobile-app-item:nth-child(3) {
+        display: none;
+        @media (min-width: $bp-lg) {
+            display: flex;
+        }
+    }
+}

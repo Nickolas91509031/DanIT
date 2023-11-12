@@ -1,0 +1,68 @@
+.section-works {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 16px;
+    @include flex(start, space-between, column);
+    gap: 40px;
+    background: $section-works-background-color;
+
+    @media (min-width: $bp-md) {
+        padding: 100px 33px;
+    }
+
+    @media (min-width: $bp-lg) {
+        padding: 101px 191px;
+    }
+}
+
+.section-works__title {
+    color: #faeb49;
+    font-size: 36px;
+    font-weight: 700;
+
+    @media (min-width: $bp-md) {
+        font-size: 48px;
+    }
+}
+
+.section-works__description {
+    color: $main-color;
+    font-family: Manrope;
+    font-size: 15px;
+    font-weight: 500;
+
+    @media (min-width: $bp-md) {
+        font-size: 16px;
+    }
+}
+
+.section-works__works_wrapper {
+    display: flex;
+    gap: 43px;
+
+    @media (min-width: $bp-md) {
+        gap: 96px;
+    }
+
+    & div {
+        @include flex(start, start, column);
+        gap: 5px;
+
+        & p:first-child {
+            color: $main-color;
+            font-family: DynaPuff;
+            font-size: 36px;
+            font-weight: 700;
+
+            @media (min-width: 768px) {
+                font-size: 48px;
+            }
+        }
+
+        & p:last-child {
+            color: $main-color;
+            font-family: Manrope;
+            font-weight: 700;
+        }
+    }
+}
