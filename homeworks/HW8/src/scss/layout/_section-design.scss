@@ -1,4 +1,6 @@
 .section-design {
+    @include flex(start, start, column);
+    gap: 28px;
     padding: 58px 16px;
     padding-bottom: 93px;
     background-color: $section-design-background-color;
@@ -11,5 +13,78 @@
     @media (min-width: $bp-lg) {
         padding: 82px 191px;
         padding-bottom: 138px;
+    }
+}
+
+.section-design__title {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+
+    @media (min-width: $bp-md) {
+        font-size: 80px;
+    }
+}
+
+.section-design__img-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: $bp-md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+    }
+}
+
+.section-design__img-item {
+    @include flex(center, center, row);
+    height: 325px;
+    width: 343px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @media (min-width: $bp-md) {
+        width: 336px;
+    }
+    @media (min-width: $bp-lg) {
+        width: 514px;
+        height: 414px;
+    }
+
+    &:nth-child(1) {
+        background-image: url("../../img/unsplash_rqIfy1UyIzE.jpg");
+
+        @media (min-width: $bp-md) {
+            grid-column: span 2;
+            height: 414px;
+            width: 704px;
+        }
+        @media (min-width: $bp-lg) {
+            width: 1055px;
+        }
+
+        &::before {
+            content: url("../../img/Soft Star.svg");
+            background-repeat: no-repeat;
+        }
+    }
+    &:nth-child(2) {
+        background-image: url("../../img/Rectangle\ 6.jpg");
+
+        &::before {
+            content: url("../../img/Butterfly.svg");
+            background-repeat: no-repeat;
+        }
+    }
+    &:nth-child(3) {
+        background-image: url("../../img/Rectangle\ 7.jpg");
+
+        &::before {
+            content: url("../../img/Asterisk 1.svg");
+            background-repeat: no-repeat;
+        }
     }
 }

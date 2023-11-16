@@ -1,0 +1,107 @@
+.footer {
+    @include flex(center, start, column);
+    gap: 113px;
+    padding: 53px 16px;
+    padding-bottom: 40px;
+    background-color: $footer-background-color;
+
+    @media (min-width: $bp-md) {
+        padding: 96px 32px;
+        padding-bottom: 35px;
+        gap: 60px;
+    }
+    @media (min-width: $bp-lg) {
+        padding-top: 87px;
+        padding-bottom: 30px;
+        gap: 163px;
+    }
+}
+
+.footer__new-project-link {
+    border-radius: 139px;
+    border: 1px solid #f2f2f2;
+    padding: 14px 33.5px;
+    @include flex(center, start, row);
+    gap: 20px;
+    background: url("../../img/Group\ 2.svg") no-repeat 80% 72%;
+    transition: 0.6s;
+
+    &::before {
+        content: url("../../img/Dawn.svg");
+    }
+
+    &:hover {
+        background: url("../../img/Group\ 2.svg") no-repeat 85% 72%;
+    }
+
+    @media (min-width: $bp-md) {
+        gap: 45px;
+        background: url("../../img/Group\ 2\ \(1\).svg") no-repeat 60% 85%;
+
+        &:hover {
+            background: url("../../img/Group\ 2\ \(1\).svg") no-repeat 65% 85%;
+        }
+
+        &::before {
+            content: url("../../img/Dawn\ \(1\).svg");
+        }
+    }
+}
+
+.footer__new-project-heading-wrapper {
+    @include flex(start, start, column);
+    gap: 4px;
+
+    @media (min-width: $bp-md) {
+        gap: 17px;
+    }
+}
+
+.footer__new-project-title {
+    color: $footer-color;
+    font-size: 19.5px;
+    font-weight: 700;
+
+    @media (min-width: $bp-md) {
+        font-size: 48px;
+    }
+}
+
+.footer__new-project-desc-wrapper {
+    @include flex(center, start, row);
+    gap: 24px;
+}
+
+.footer__new-project-desc {
+    color: $footer-color;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 15px;
+    font-weight: 500;
+
+    @media (min-width: $bp-md) {
+        font-size: 24px;
+    }
+}
+
+.footer__social-wrapper {
+    @include flex(center, start, column);
+    gap: 21px;
+}
+
+.footer__social {
+    @include flex(center, center, row);
+    gap: 34px;
+}
+
+.footer__desc {
+    color: $footer-color;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (min-width: $bp-md) {
+        font-size: 16px;
+    }
+}

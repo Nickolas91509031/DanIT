@@ -64,11 +64,13 @@
 			<section class="section-projects">
 				<div class="section-projects__banking-app-wrapper">
 					<a href="/">
-						<img src="./img/Frame 17.png">
-						<img src="./img/Frame 17 (1).png">
-						<img src="./img/Frame 17 (2).png">
+						<picture>
+							<img src="./img/Frame 17.png">
+							<source srcset="./img/Frame 17 (1).png" media="(min-width: 768px)">
+							<source srcset="./img/Frame 17 (2).png" media="(min-width: 1200px)">
+						</picture>
 					</a>
-					<div  class="section-projects__banking-app-inscription">
+					<div  class="section-projects__banking-app-heading">
 						<p>Banking Mobile App</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 					</div>
@@ -77,11 +79,11 @@
 					<div class="section-projects__mobile-app-item">
 						<div class="section-projects__mobile-app-img-wrapper">
 							<img src="./img/Frame 17_1.jpg">
-							<a class="arrow-up" href="/">
+							<a class="section-projects__arrow-up" href="/">
 								<img src="./img/fi-rr-arrow-up.svg">
 							</a>
 						</div>
-						<div  class="section-projects__mobile-app-inscription">
+						<div  class="section-projects__mobile-app-heading">
 							<p>Save Planet Mobile app</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 						</div>
@@ -89,11 +91,11 @@
 					<div class="section-projects__mobile-app-item">
 						<div class="section-projects__mobile-app-img-wrapper">
 							<img src="./img/Frame 17_2.jpg">
-							<a class="arrow-up" href="/">
+							<a class="section-projects__arrow-up" href="/">
 								<img src="./img/fi-rr-arrow-up.svg">
 							</a>
 						</div>
-						<div  class="section-projects__mobile-app-inscription">
+						<div  class="section-projects__mobile-app-heading">
 							<p>Banking Mobile App</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 						</div>
@@ -101,18 +103,58 @@
 					<div class="section-projects__mobile-app-item">
 						<div class="section-projects__mobile-app-img-wrapper">
 							<img src="./img/Frame 17_3.jpg">
-							<a class="arrow-up" href="/">
+							<a class="section-projects__arrow-up" href="/">
 								<img src="./img/fi-rr-arrow-up.svg">
 							</a>
 						</div>
-						<div  class="section-projects__mobile-app-inscription">
+						<div  class="section-projects__mobile-app-heading">
 							<p>Save Planet Mobile app</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="section-design"></section>
+			<section class="section-design">
+				<p class="section-design__title">Graphics Design</p>
+				<div class="section-design__img-wrapper">
+					<div class="section-design__img-item">
+					</div>
+					<div class="section-design__img-item">
+					</div>
+					<div class="section-design__img-item">
+					</div>
+				</div>
+			</section>
+			<section class="section-good-design">
+				<p>“Good design is like a refrigerator - when it works, no one notices, but when it doesn't, it sure stinks.”</p>
+			</section>
 		</main>
+		<footer class="footer">
+			<a href="/" class="footer__new-project-link">
+				<div class="footer__new-project-heading-wrapper">
+					<p class="footer__new-project-title">Have a new project?</p>
+					<div class="footer__new-project-desc-wrapper">
+						<p class="footer__new-project-desc">Book a call now</p>
+					</div>
+				</div>
+			</a>
+			<div class="footer__social-wrapper">
+				<div class="footer__social">
+					<a href="/">
+						<img src="./img/twitch 1.svg" alt="twitch">
+					</a>
+					<a href="/">
+						<img src="./img/twitter 1.svg" alt="twitter">
+					</a>
+					<a href="/">
+						<img src="./img/instagram 1.svg" alt="instagram">
+					</a>
+					<a href="/">
+						<img src="./img/linkedin 1.svg" alt="linkedin">
+					</a>
+				</div>
+				<p class="footer__desc">Copyright © 2023 Syeda Urooj</p>
+			</div>
+		</footer>
 	</body>
 </html>
