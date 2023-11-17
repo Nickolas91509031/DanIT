@@ -21,39 +21,14 @@
     border-radius: 24px;
     background-color: $mobile-app-wrapper-background-color;
 
+    & picture {
+        display: block;
+        position: relative;
+    }
+
     @media (min-width: $bp-md) {
         padding: 24px 20px;
     }
-
-    // & img:nth-child(1) {
-    //     display: block;
-    //     @media (min-width: $bp-md) {
-    //         display: none;
-    //     }
-    //     @media (min-width: $bp-lg) {
-    //         display: none;
-    //     }
-    // }
-
-    // & img:nth-child(2) {
-    //     display: none;
-    //     @media (min-width: $bp-md) {
-    //         display: block;
-    //     }
-    //     @media (min-width: $bp-lg) {
-    //         display: none;
-    //     }
-    // }
-
-    // & img:nth-child(3) {
-    //     display: none;
-    //     @media (min-width: $bp-md) {
-    //         display: none;
-    //     }
-    //     @media (min-width: $bp-lg) {
-    //         display: block;
-    //     }
-    // }
 }
 
 .section-projects__banking-app-heading {
@@ -75,6 +50,7 @@
         font-family: Manrope;
         font-size: 15px;
         font-weight: 700;
+        width: 311px;
 
         @media (min-width: $bp-md) {
             font-size: 16px;
@@ -161,6 +137,8 @@
         font-family: Manrope;
         font-size: 15px;
         font-weight: 500;
+        width: 290px;
+
         @media (min-width: $bp-lg) {
             width: 285px;
         }
