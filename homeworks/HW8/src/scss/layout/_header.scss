@@ -15,8 +15,10 @@
 }
 
 .header__navigation-menu {
+    position: fixed;
     @include flex(center, space-between, row);
-    width: 100%;
+    z-index: 1;
+
     @media (min-width: $bp-lg) {
         gap: 235px;
     }
@@ -61,10 +63,15 @@
 }
 
 .header__title {
+    padding-top: 412px;
     color: $main-color;
     font-size: 48px;
     font-weight: 700;
     @media (min-width: $bp-md) {
+        padding-top: 273px;
         font-size: 80px;
+    }
+    @media (min-width: $bp-lg) {
+        padding-top: 491px;
     }
 }
