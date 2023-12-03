@@ -1,0 +1,7 @@
+.main__banner {
+    @include flex(start, center, row);
+
+    & img {
+        object-fit: cover;
+    }
+}
