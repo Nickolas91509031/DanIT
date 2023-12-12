@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black-wrapper {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20%;
+    font-size: 30px;
+}
