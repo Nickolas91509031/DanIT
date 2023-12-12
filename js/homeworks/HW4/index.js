@@ -23,34 +23,26 @@
 
 // 1.
 
-let firstNumber = prompt("Введите первое число");
-let result = null;
-
-while (isNaN(firstNumber)) {
-    alert("Это не число");
+do {
     firstNumber = prompt("Введите первое число");
-}
-
-let secondNumber = prompt("Введите второе число");
-
-while (isNaN(secondNumber)) {
-    alert("Это не число");
     secondNumber = prompt("Введите второе число");
-}
+} while (isNaN(firstNumber) || isNaN(secondNumber));
 
 if (firstNumber <= secondNumber) {
-    result = `${firstNumber} ${secondNumber}`;
+    for (let i = firstNumber; i <= secondNumber; i++) {
+        console.log(i);
+    }
 } else {
-    result = `${secondNumber} ${firstNumber}`;
+    for (let i = secondNumber; i <= firstNumber; i++) {
+        console.log(i);
+    }
 }
-
-alert(result);
 
 // 2.
 
 let num = prompt("Введите парное число");
 
-while (num % 2 !== 0 && num !== 0) {
+while (num % 2 !== 0 || num !== 0) {
     alert("Вы ввели не парное число!");
     num = prompt("Введите парное число");
 }
