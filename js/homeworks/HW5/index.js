@@ -56,13 +56,9 @@ console.log(showDivisionRsult(10, 5));
 //     let num1;
 //     let num2;
 
-//     do {
-//         num1 = prompt("Введіть перше число");
-//     } while (isNaN(num1) || num1 === "");
+//     num1 = validateNumber(num1);
 
-//     do {
-//         num2 = prompt("Введіть друге число");
-//     } while (isNaN(num2) || num2 === "");
+//     num2 = validateNumber(num2);
 
 //     let operator = prompt("Введіть операцію");
 
@@ -95,6 +91,13 @@ console.log(showDivisionRsult(10, 5));
 //             break;
 //     }
 // };
+
+// function validateNumber(num) {
+//     do {
+//         num = prompt(`Введіть число`);
+//     } while (isNaN(num) || num === "");
+//     return +num;
+// }
 
 // getMathResult();
 
