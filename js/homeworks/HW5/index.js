@@ -52,29 +52,18 @@ console.log(showDivisionRsult(10, 5));
 
 // 2.
 
-// const getFirstNumber = () => {
-//     let num1 = prompt("Введіть перше число");
+// const getMathResult = () => {
+//     let num1;
+//     let num2;
 
-//     while (isNaN(num1) || num1 === "") {
-//         alert("Введено не число");
-//         getFirstNumber();
-//     }
+//     do {
+//         num1 = prompt("Введіть перше число");
+//     } while (isNaN(num1) || num1 === "");
 
-//     return +num1;
-// };
+//     do {
+//         num2 = prompt("Введіть друге число");
+//     } while (isNaN(num2) || num2 === "");
 
-// const getSecondNumber = () => {
-//     let num2 = prompt("Введіть друге число");
-
-//     while (isNaN(num2) || num2 === "") {
-//         alert("Введено не число");
-//         getFirstNumber();
-//     }
-
-//     return +num2;
-// };
-
-// const getMathOperator = (num1, num2) => {
 //     let operator = prompt("Введіть операцію");
 
 //     switch (operator) {
@@ -100,7 +89,7 @@ console.log(showDivisionRsult(10, 5));
 //     }
 // };
 
-// getMathOperator(getFirstNumber(), getSecondNumber());
+// getMathResult();
 
 // 3.
 
