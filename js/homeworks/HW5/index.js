@@ -52,44 +52,44 @@ console.log(showDivisionRsult(10, 5));
 
 // 2.
 
-const getMathResult = () => {
-    let num1;
-    let num2;
+// const getMathResult = () => {
+//     let num1;
+//     let num2;
 
-    do {
-        num1 = prompt("Введіть перше число");
-    } while (isNaN(num1) || num1 === "");
+//     do {
+//         num1 = prompt("Введіть перше число");
+//     } while (isNaN(num1) || num1 === "");
 
-    do {
-        num2 = prompt("Введіть друге число");
-    } while (isNaN(num2) || num2 === "");
+//     do {
+//         num2 = prompt("Введіть друге число");
+//     } while (isNaN(num2) || num2 === "");
 
-    let operator = prompt("Введіть операцію");
+//     let operator = prompt("Введіть операцію");
 
-    switch (operator) {
-        case "+":
-            alert(num1 + num2);
-            console.log(num1 + num2);
-            break;
-        case "-":
-            alert(num1 - num2);
-            console.log(num1 - num2);
-            break;
-        case "*":
-            alert(num1 * num2);
-            console.log(num1 * num2);
-            break;
-        case "/":
-            alert(num1 / num2);
-            console.log(num1 / num2);
-            break;
-        default:
-            alert("Такої операції не існує");
-            getMathResult();
-    }
-};
+//     switch (operator) {
+//         case "+":
+//             alert(num1 + num2);
+//             console.log(num1 + num2);
+//             break;
+//         case "-":
+//             alert(num1 - num2);
+//             console.log(num1 - num2);
+//             break;
+//         case "*":
+//             alert(num1 * num2);
+//             console.log(num1 * num2);
+//             break;
+//         case "/":
+//             alert(num1 / num2);
+//             console.log(num1 / num2);
+//             break;
+//         default:
+//             alert("Такої операції не існує");
+//             getMathResult();
+//     }
+// };
 
-getMathResult();
+// getMathResult();
 
 // 3.
 
