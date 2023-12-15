@@ -50,7 +50,7 @@ console.log(showDivisionRsult(10, 5));
 
 */
 
-// 2.
+// 2;
 
 // const getMathResult = () => {
 //     let num1;
@@ -65,6 +65,16 @@ console.log(showDivisionRsult(10, 5));
 //     } while (isNaN(num2) || num2 === "");
 
 //     let operator = prompt("Введіть операцію");
+
+//     while (
+//         operator !== "+" &&
+//         operator !== "-" &&
+//         operator !== "*" &&
+//         operator !== "/"
+//     ) {
+//         alert("Такої операції не існує");
+//         operator = prompt("Введіть операцію");
+//     }
 
 //     switch (operator) {
 //         case "+":
@@ -83,9 +93,6 @@ console.log(showDivisionRsult(10, 5));
 //             alert(num1 / num2);
 //             console.log(num1 / num2);
 //             break;
-//         default:
-//             alert("Такої операції не існує");
-//             getMathResult();
 //     }
 // };
 
