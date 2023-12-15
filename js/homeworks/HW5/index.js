@@ -51,18 +51,10 @@ console.log(showDivisionRsult(10, 5));
 
 // 2.
 
-// const showMathOperation = (
-//     num1 = getFirstNumber(),
-//     num2 = getSecondNumber(),
-//     operator
-// ) => {
-//     console.log(getMathOperator(num1, num2, operator));
-// };
-
 // const getFirstNumber = () => {
 //     let num1 = prompt("Введіть перше число");
 
-//     while (isNaN(num1) || num1 === null || num1 === "") {
+//     while (isNaN(num1) || num1 === "") {
 //         alert("Введено не число");
 //         getFirstNumber();
 //     }
@@ -73,7 +65,7 @@ console.log(showDivisionRsult(10, 5));
 // const getSecondNumber = () => {
 //     let num2 = prompt("Введіть друге число");
 
-//     while (isNaN(num2) || num2 === null || num2 === "") {
+//     while (isNaN(num2) || num2 === "") {
 //         alert("Введено не число");
 //         getFirstNumber();
 //     }
@@ -81,29 +73,33 @@ console.log(showDivisionRsult(10, 5));
 //     return +num2;
 // };
 
-// const getMathOperator = (num1, num2, operator) => {
-//     operator = prompt("Введіть операцію");
+// const getMathOperator = (num1, num2) => {
+//     let operator = prompt("Введіть операцію");
 
 //     switch (operator) {
 //         case "+":
 //             alert(num1 + num2);
 //             console.log(num1 + num2);
+//             break;
 //         case "-":
 //             alert(num1 - num2);
 //             console.log(num1 - num2);
+//             break;
 //         case "*":
 //             alert(num1 * num2);
 //             console.log(num1 * num2);
+//             break;
 //         case "/":
 //             alert(num1 / num2);
 //             console.log(num1 / num2);
+//             break;
 //         default:
-//             alert('Такої операції не існує');
-//             getMathOperator();
+//             alert("Такої операції не існує");
+//             getMathOperator(num1, num2);
 //     }
 // };
 
-// showMathOperation();
+// getMathOperator(getFirstNumber(), getSecondNumber());
 
 // 3.
 
