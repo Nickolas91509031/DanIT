@@ -1,7 +1,8 @@
 /* 
 Теоретичні питання
 1. Як можна створити функцію та як ми можемо її викликати? 
-1. Щоб викликати функцію, потрібно: 1) ввести ім'я функції й додати дужки; 2) у дужках перелічити аргументи функції — значення, які треба присвоїти формальним параметрам. Якщо формальних параметрів немає, то при виклику після імені функції потрібно писати порожні дужки.
+1.Щоб створити функцію нам треба її оголосити. Спочатку ми пишемо function — це ключове слово (keyword), яке дає зрозуміти комп'ютеру, що далі буде оголошення функції. Потім — назву функції і список її параметрів в дужках (розділені комою). Якщо параметрів немає, ми залишаємо пусті дужки. 
+Щоб викликати функцію, потрібно: 1) ввести ім'я функції й додати дужки; 2) у дужках перелічити аргументи функції — значення, які треба присвоїти формальним параметрам. Якщо формальних параметрів немає, то при виклику після імені функції потрібно писати порожні дужки.
 
 2. Що таке оператор return в JavaScript? Як його використовувати в функціях?
 2. Оператор return завершает выполнение текущей функции и возвращает её значение. Оператор return завершает выполнение текущей функции и возвращает её значение.
@@ -11,18 +12,17 @@
 
 4. Як передати функцію аргументом в іншу функцію?
 4. Приклад: 
-function перша_функція(аргумент) {
-    console.log("Викликано першу функцію з аргументом:", аргумент);
+function firstFunction(argument) {
+    console.log("Викликано першу функцію з аргументом:", argument);
 }
 
 // Оголошення функції, яка приймає функцію як аргумент
-function друга_функція(функція, значення) {
+function secondFunction(function) {
     console.log("Викликається друга функція");
-    функція(значення);
+    function;
 }
 
-// Виклик другої функції з передачею першої функції як аргумента
-друга_функція(перша_функція, "Hello, world!");
+secondFunction(firstFunction(argument));
 
 Практичні завдання
 1. Напишіть функцію, яка повертає частку двох чисел. Виведіть результат роботи функції в консоль.
@@ -47,92 +47,78 @@ function друга_функція(функція, значення) {
 const showDivisionRsult = (num1, num2) => num1 / num2;
 console.log(showDivisionRsult(10, 5));
 
+*/
+
 // 2.
 
-const showMathOperation = (
-    num1 = getFirstNumber(),
-    num2 = getSecondNumber(),
-    operator
-) => {
-    console.log(getMathOperator(num1, num2, operator));
-};
+// const showMathOperation = (
+//     num1 = getFirstNumber(),
+//     num2 = getSecondNumber(),
+//     operator
+// ) => {
+//     console.log(getMathOperator(num1, num2, operator));
+// };
 
-const getFirstNumber = () => {
-    let num1 = prompt("Введіть перше число");
+// const getFirstNumber = () => {
+//     let num1 = prompt("Введіть перше число");
 
-    if (isNaN(num1) || num1 === null || num1 === "") {
-        alert("Введено не число");
-        getFirstNumber();
-    } else {
-        return +num1;
-    }
-};
+//     while (isNaN(num1) || num1 === null || num1 === "") {
+//         alert("Введено не число");
+//         getFirstNumber();
+//     }
 
-const getSecondNumber = () => {
-    let num2 = prompt("Введіть друге число");
+//     return +num1;
+// };
 
-    if (isNaN(num2) || num2 === null || num2 === "") {
-        alert("Введено не число");
-        getSecondNumber();
-    } else {
-        return +num2;
-    }
-};
+// const getSecondNumber = () => {
+//     let num2 = prompt("Введіть друге число");
 
-const getMathOperator = (num1, num2, operator) => {
-    operator = prompt("Введіть операцію");
+//     while (isNaN(num2) || num2 === null || num2 === "") {
+//         alert("Введено не число");
+//         getFirstNumber();
+//     }
 
-    if (operator === "+") {
-        alert(num1 + num2);
-        return num1 + num2;
-    } else if (operator === "-") {
-        alert(num1 - num2);
-        return num1 - num2;
-    } else if (operator === "*") {
-        alert(num1 * num2);
-        return num1 * num2;
-    } else if (operator === "/") {
-        alert(num1 / num2);
-        return num1 / num2;
-    } else {
-        alert("Введена неправильна операція");
-        getMathOperator();
-    }
-};
+//     return +num2;
+// };
 
-showMathOperation();
+// const getMathOperator = (num1, num2, operator) => {
+//     operator = prompt("Введіть операцію");
+
+//     switch (operator) {
+//         case "+":
+//             alert(num1 + num2);
+//             console.log(num1 + num2);
+//         case "-":
+//             alert(num1 - num2);
+//             console.log(num1 - num2);
+//         case "*":
+//             alert(num1 * num2);
+//             console.log(num1 * num2);
+//         case "/":
+//             alert(num1 / num2);
+//             console.log(num1 / num2);
+//         default:
+//             alert('Такої операції не існує');
+//             getMathOperator();
+//     }
+// };
+
+// showMathOperation();
 
 // 3.
 
-const getFactorial = (num) => {
-    let factorial = 1;
+// let factorial = 1;
+// let i = 1;
 
-    for (let i = 1; i <= num + 1; i++) {
-        factorial *= i;
+// const getFactorial = (num) => {
+//     if (i === num) {
+//         console.log(factorial);
+//     } else {
+//         i++;
+//         factorial *= i;
+//         getFactorial(num);
+//     }
+// };
 
-        if (i === num) {
-            console.log(factorial);
-        }
-    }
-};
-
-const userNumber = +prompt("Введіть число");
-getFactorial(userNumber);
-
-*/
-
-let factorial = 1;
-let i = 1;
-
-const getFactorial = (num) => {
-    if (i === num) {
-        console.log(factorial);
-    } else {
-        i++;
-        factorial *= i;
-        getFactorial(num);
-    }
-};
-
-const userNumber = +prompt("Введіть число");
-getFactorial(userNumber);
+// const userNumber = +prompt("Введіть число");
+// getFactorial(userNumber);

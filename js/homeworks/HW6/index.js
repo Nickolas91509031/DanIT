@@ -73,15 +73,15 @@ const userData = {
 };
 
 function cloneObject(obj) {
-    const cloneObject = {};
+    const cloneObj = {};
     for (const key in obj) {
-        cloneObject[key] = obj[key];
-
-        for (const value in obj[key]) {
-            cloneObject[key][value] = obj[key][value];
+        if (typeof obj[key] === "object") {
+            cloneObj[key] = cloneObject(obj[key]);
+        } else {
+            cloneObj[key] = obj[key];
         }
     }
-    console.log(cloneObject);
+    return cloneObj;
 }
 
-cloneObject(userData);
+console.log(cloneObject(userData));
