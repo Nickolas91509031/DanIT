@@ -44,42 +44,67 @@ console.log(userData.getFullName());
 
 */
 
-const priceList = {
-    sizes: {
-        small: {
-            price: 15,
-            calories: 250,
-        },
-        medium: {
-            price: 25,
-            calories: 340,
-        },
-        large: {
-            price: 35,
-            calories: 440,
-        },
-    },
-    types: {
-        breakfast: {
-            price: 4,
-            calories: 25,
-        },
-        lunch: {
-            price: 5,
-            calories: 5,
-        },
-        dinner: {
-            price: 10,
-            calories: 50,
-        },
-    },
+// const priceList = {
+//     sizes: {
+//         small: {
+//             price: 15,
+//             calories: 250,
+//         },
+//         medium: {
+//             price: 25,
+//             calories: 340,
+//         },
+//         large: {
+//             price: 35,
+//             calories: 440,
+//         },
+//     },
+//     types: {
+//         breakfast: {
+//             price: 4,
+//             calories: 25,
+//         },
+//         lunch: {
+//             price: 5,
+//             calories: 5,
+//         },
+//         dinner: {
+//             price: 10,
+//             calories: 50,
+//         },
+//     },
+// };
+
+// function calcTotalParams(size, types) {
+//     return {
+//         totalSizes: priceList.sizes[size],
+//         totalTypes: priceList.types[types],
+//     }
+// }
+
+// calcTotalParams("large", "dinner");
+
+// const textLine = "I try to find some tea";
+
+// const upperCaseAndDoubly = (simbol) => {
+//     console.log(simbol.toUpperCase());
+// };
+
+// upperCaseAndDoubly(textLine);
+
+const addZeroToStart = (str) => {
+    if (str.toString().length === 1) {
+        return `0${str}`;
+    }
+    return str;
 };
 
-function calcTotalParams(size, types) {
-    return {
-        totalSizes: priceList.sizes[size],
-        totalTypes: priceList.types[types],
-    }
-}
-
-calcTotalParams("large", "dinner");
+const now = new Date();
+console.log(now);
+console.log(
+    `${addZeroToStart(now.getHours())}:${addZeroToStart(
+        now.getMinutes()
+    )}:${addZeroToStart(now.getSeconds())} ${addZeroToStart(
+        now.getDate()
+    )}.${addZeroToStart(now.getMonth() + 1)}.${now.getFullYear()}`
+);
