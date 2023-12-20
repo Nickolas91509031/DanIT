@@ -13,8 +13,8 @@
 3. Як перевірити, чи два рядки рівні між собою?
 3. Ви можете порівнювати рядки на основі їх алфавітного порядку та довжини за допомогою операторів арифметичного порівняння. Результатом буде значення типу boolean.
 
-4. Що повертає Date.now()?
-4. Date.now() повертає числове подання поточної дати та часу.
+4. Що пове-ртає Date.now()?
+4. Date.now() — возвращает количество миллисекунд, прошедших с полуночи 1 января 1970 года по всемирному координированному времени.
 
 5. Чим відрізняється Date.now() від new Date()?
 5. new Date() — создает объект Date, представляющий текущую дату/время.
@@ -55,7 +55,7 @@ funcName('checked string', 10); // false
 // 2.
 
 // const funcName = (str, value) => {
-//     if (str.length < value) {
+//     if (str.length <= value) {
 //         return true;
 //     }
 //     return false;
@@ -67,17 +67,13 @@ funcName('checked string', 10); // false
 // 3.
 
 const now = new Date();
-let userBirthday;
-
-do {
-    userBirthday = prompt("Введіть дату народження у форматі: YYYY-MM-DD");
-    userBirthday = new Date(userBirthday);
-} while (userBirthday === "" || isNaN(userBirthday));
+let userBirthday = prompt("Введіть дату народження у форматі: YYYY-MM-DD");
 
 const getUserBirthday = (birthday) => {
+    birthday = new Date(birthday);
     const userAge = now.getFullYear() - birthday.getFullYear();
 
-    console.log(userAge);
+    return userAge;
 };
 
-getUserBirthday(userBirthday);
+console.log(getUserBirthday(userBirthday));

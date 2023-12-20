@@ -1,7 +1,7 @@
 /* 
 Теоретичні питання
 1. Опишіть своїми словами, що таке метод об'єкту
-1. Метод - функция, связанная с объектом.
+1. Метод - функція в об'єкті, яка виконує дії властиві тільки цьому об'єкту.
 
 2. Який тип даних може мати значення властивості об'єкта?
 2. Значення можуть бути будь-якого типу.
@@ -38,50 +38,44 @@ const product = {
 
 product.showPrice();
 
+*/
+
 // 2.
 
-const getUserData = function () {
-    const userName = prompt("Введите ваше имя");
-    const userAge = +prompt("Введите ваш возраст");
+// userDate = {
+//     name: prompt("Введіть ім'я"),
+//     age: +prompt("Введіть вік"),
+// };
 
-    const userData = {
-        userName,
-        userAge,
-        showGreeting: function () {
-            alert(`Привіт, мені ${this.userAge} років`);
-        },
-    };
-    return userData;
-};
+// function greeting(obj) {
+//     return `Привіт, мені ${obj.age} років`;
+// }
 
-const user1 = getUserData();
-user1.showGreeting();
-
-*/
+// alert(greeting(userDate));
 
 // 3.
 
-const userData = {
-    name: "Ivan",
-    age: 30,
-    job: "lawyer",
-    birthday: {
-        day: 12,
-        month: 12,
-        year: 1999,
-    },
-};
+// const userData = {
+//     name: "Ivan",
+//     age: 30,
+//     job: "lawyer",
+//     birthday: {
+//         day: 12,
+//         month: 12,
+//         year: 1999,
+//     },
+// };
 
-function cloneObject(obj) {
-    const cloneObj = {};
-    for (const key in obj) {
-        if (typeof obj[key] === "object") {
-            cloneObj[key] = cloneObject(obj[key]);
-        } else {
-            cloneObj[key] = obj[key];
-        }
-    }
-    return cloneObj;
-}
+// function cloneObject(obj) {
+//     const cloneObj = {};
+//     for (const key in obj) {
+//         if (typeof obj[key] === "object") {
+//             cloneObj[key] = cloneObject(obj[key]);
+//         } else {
+//             cloneObj[key] = obj[key];
+//         }
+//     }
+//     return cloneObj;
+// }
 
-console.log(cloneObject(userData));
+// console.log(cloneObject(userData));
