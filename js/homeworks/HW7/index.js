@@ -43,10 +43,7 @@ funcName('checked string', 10); // false
 // function isPalindrome(str) {
 //     str = str.toLowerCase();
 
-//     if (str === str.split("").reverse().join("")) {
-//         return true;
-//     }
-//     return false;
+//     return str === str.split("").reverse().join("");
 // }
 
 // console.log(isPalindrome(firstString));
@@ -54,12 +51,7 @@ funcName('checked string', 10); // false
 
 // 2.
 
-// const funcName = (str, value) => {
-//     if (str.length <= value) {
-//         return true;
-//     }
-//     return false;
-// };
+// const funcName = (str, value) => str.length <= value;
 
 // console.log(funcName("checked string", 20));
 // console.log(funcName("checked string", 10));
@@ -71,9 +63,14 @@ let userBirthday = prompt("Введіть дату народження у фо�
 
 const getUserBirthday = (birthday) => {
     birthday = new Date(birthday);
-    const userAge = now.getFullYear() - birthday.getFullYear();
+    const differenceYears = now.getFullYear() - birthday.getFullYear();
+    const differenceMonths = now.getMonth() - birthday.getMonth();
+    const differenceDays = now.getDate() - birthday.getDate();
 
-    return userAge;
+    return differenceMonths < 0 ||
+        (differenceMonths === 0 && differenceDays < 0)
+        ? differenceYears - 1
+        : differenceYears;
 };
 
 console.log(getUserBirthday(userBirthday));
