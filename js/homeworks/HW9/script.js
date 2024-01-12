@@ -24,6 +24,8 @@
 
 // 1.
 
+"use strict";
+
 const featureElementByGet = document.getElementsByClassName("feature");
 const featureElementByQuery = document.querySelectorAll(".feature");
 

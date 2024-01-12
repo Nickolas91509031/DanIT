@@ -20,6 +20,8 @@
 
 // 1.
 
+"use strict";
+
 const section = document.querySelector("#content");
 const firstParagraph = document.querySelector("#content>p");
 const addParagraphBtn = document.querySelector("#btn-click");

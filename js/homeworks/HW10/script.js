@@ -36,6 +36,8 @@ body.removeChild(nav);
 
 // 1.
 
+"use strict";
+
 const paragraph = document.querySelector("footer p");
 const elementA = document.createElement("a");
 elementA.innerText = "Learn More";
