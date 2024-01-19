@@ -3,8 +3,23 @@
 
 /* font-family: 'Inter', sans-serif; */
 
+:root {
+    --main-color: #fdfdfd;
+    --first-color: black;
+    --second-color: #0e0f13;
+}
+
+.dark {
+    --main-color: black;
+    --first-color: #fdfdfd;
+}
+
 html {
     font-family: "Cabin", sans-serif;
+}
+
+body {
+    background-color: var(--main-color);
 }
 
 /* --------------------HEADER---------------------------------- */
@@ -19,7 +34,7 @@ html {
 .header_page_logo {
     display: flex;
     gap: 18px;
-    color: black;
+    color: var(--first-color);
     text-decoration: none;
     cursor: default;
 }
@@ -36,7 +51,7 @@ html {
 }
 
 .top_menu-bar_item {
-    color: #0e0f13;
+    color: var(--second-color);
     text-decoration: none;
     cursor: default;
     text-align: center;
@@ -62,6 +77,7 @@ html {
     border-radius: 8px;
 }
 
+.toggle-theme-btn,
 .sign-in_button {
     border: 1px solid #dadada;
 }
