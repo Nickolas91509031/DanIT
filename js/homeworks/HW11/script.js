@@ -25,6 +25,11 @@
 const section = document.querySelector("#content");
 const firstParagraph = document.querySelector("#content>p");
 const addParagraphBtn = document.querySelector("#btn-click");
+const inputAttributes = {
+    type: "input",
+    placeholder: "Enter text",
+    name: "input",
+};
 
 addParagraphBtn.addEventListener("click", () => {
     const newParagraph = document.createElement("p");
@@ -39,8 +44,8 @@ section.append(btnInputCreate);
 
 btnInputCreate.addEventListener("click", () => {
     const newInput = document.createElement("input");
-    newInput.setAttribute("type", "input");
-    newInput.setAttribute("placeholder", "Enter text");
-    newInput.setAttribute("name", "input");
+    for (const key in inputAttributes) {
+        newInput.setAttribute(key, inputAttributes[key]);
+    }
     btnInputCreate.after(newInput);
 });
