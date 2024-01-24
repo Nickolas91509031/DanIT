@@ -27,10 +27,18 @@
 
 "use strict";
 
-const tabsList = document.querySelector(".tabs");
+const tabs = document.querySelector(".tabs");
+const tabsList = tabs.querySelectorAll(".tabs-title");
 const listLi = document.querySelectorAll(".tabs-content li");
+let i = 0;
 
-tabsList.addEventListener("click", (event) => {
+tabsList.forEach((tab) => {
+    tab.dataset.id = i;
+    console.log(tab);
+    i++;
+});
+
+tabs.addEventListener("click", (event) => {
     const activeTabTitle = document.querySelector(".active");
 
     if (event.target.classList.contains("active") || !activeTabTitle) {
@@ -41,9 +49,7 @@ tabsList.addEventListener("click", (event) => {
     }
 
     function toggleTab(elem) {
-        const activedTab = document.querySelector(
-            `.tabs-content li[data-name=${elem.innerText.toLowerCase()}]`
-        );
+        const activedTab = listLi[elem.dataset.id];
         elem.classList.toggle("active");
         activedTab.classList.toggle("hidden");
     }
