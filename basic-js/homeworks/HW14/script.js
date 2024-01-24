@@ -21,7 +21,7 @@
 - Вибрана тема повинна зберігатися після перезавантаження сторінки.
 
 Примітки: 
-- при виконанні завд    ання перебирати та задавати стилі всім елементам за допомогою js буде вважатись помилкою;
+- при виконанні завдання перебирати та задавати стилі всім елементам за допомогою js буде вважатись помилкою;
 - зміна інших стилів сторінки, окрім кольорів буде вважатись помилкою.
 
 Додаткові матеріали: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties.
@@ -36,9 +36,5 @@ document.body.className = savedTheme;
 
 toggleButton.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    toggleButton.innerText === "Light Theme"
-        ? (toggleButton.innerText = "Dark Theme")
-        : (toggleButton.innerText = "Light Theme");
-
     sessionStorage.setItem("toggleClass", document.body.className);
 });

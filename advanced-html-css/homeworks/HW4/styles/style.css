@@ -10,8 +10,9 @@
 }
 
 .dark {
-    --main-color: black;
+    --main-color: #1a1a1d;
     --first-color: #fdfdfd;
+    --second-color: #122677;
 }
 
 html {
@@ -95,6 +96,7 @@ body {
     margin-top: 157px;
     font-size: 64px;
     font-weight: 500;
+    color: var(--first-color);
 }
 
 .pricing_page_heading_description {
