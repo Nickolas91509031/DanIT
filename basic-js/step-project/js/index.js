@@ -265,9 +265,52 @@ document.querySelector(".sidebar").hidden = false;
 trainerCardContainer.addEventListener("click", (event) => {
     const modal = modalTemplate.cloneNode(true);
     const trainerData = DATA[event.target.dataset.id];
+    const modalClose = modal.querySelector(".modal__close");
 
     if (event.target.classList.contains("trainer__show-more")) {
+        disableScroll();
+
         modal.querySelector(".modal__img").src = trainerData.photo;
-        document.body.appendChild(modal);
+        modal.querySelector(".modal__name").innerText =
+            trainerData["last name"] + " " + trainerData["first name"];
+        modal.querySelector(
+            ".modal__point--category"
+        ).innerText = `Категорія: ${trainerData.category}`;
+        modal.querySelector(
+            ".modal__point--experience"
+        ).innerText = `Досвід: ${trainerData.experience}`;
+        modal.querySelector(
+            ".modal__point--specialization"
+        ).innerText = `Напрям тренера: ${trainerData.specialization}`;
+        modal.querySelector(".modal__text").innerText = trainerData.description;
+
+        document.body.append(modal);
+
+        modalClose.addEventListener("click", () => {
+            const modalTemplate = document.querySelector(".modal");
+            modalTemplate.remove();
+        });
     }
 });
+
+function disableScroll() {
+    const body = document.body;
+    const scrollPosition = window.scrollY;
+
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.widows = "100%";
+    body.style.top = `-${scrollPosition}px`;
+}
+
+function enableScroll() {
+    const body = document.body;
+    const scrollPosition = window.scrollY;
+
+    body.style.overflow = "";
+    body.style.position = "";
+    body.style.width = "auto";
+    body.style.top = "";
+
+    window.scrollTo(0, scrollPosition);
+}

@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* font-family: 'Inter', sans-serif; */
+
+:root {
+    --main-color: #fdfdfd;
+    --first-color: black;
+    --second-color: #0e0f13;
+}
+
+.dark {
+    --main-color: #1a1a1d;
+    --first-color: #fdfdfd;
+    --second-color: #122677;
+}
+
+html {
+    font-family: "Cabin", sans-serif;
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+/* --------------------HEADER---------------------------------- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 52px 0 52px;
+}
+
+.header_page_logo {
+    display: flex;
+    gap: 18px;
+    color: var(--first-color);
+    text-decoration: none;
+    cursor: default;
+}
+
+.header_page_name {
+    padding: 10px 0;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.top_menu-bar {
+    display: flex;
+    gap: 56px;
+}
+
+.top_menu-bar_item {
+    color: var(--second-color);
+    text-decoration: none;
+    cursor: default;
+    text-align: center;
+    font-size: 20px;
+    line-height: 125%;
+}
+
+.top_menu-bar_item.active {
+    color: #425df8;
+}
+
+.authorization {
+    display: flex;
+    gap: 24px;
+}
+
+.authorization button {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.72px;
+    padding: 18px 22px;
+    border-radius: 8px;
+}
+
+.toggle-theme-btn,
+.sign-in_button {
+    border: 1px solid #dadada;
+}
+
+.sign-up_button {
+    color: #f6fdff;
+    border: 1px solid #425df8;
+    background: #425df8;
+}
+
+/* --------------------------MAIN-------------------------- */
+
+.pricing_page_heading {
+    text-align: center;
+    margin-top: 157px;
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--first-color);
+}
+
+.pricing_page_heading_description {
+    margin-top: 24px;
+    text-align: center;
+    color: #7f828a;
+    font-size: 22px;
+    margin-bottom: 120px;
+}
+
+/* ----------------------------CARDS---------------------------- */
+
+.payment_options_wrapper {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 195px;
+    padding: 0 52px;
+}
+
+.payment_option {
+    display: flex;
+    flex-direction: column;
+    gap: 125px;
+    padding: 56px;
+    border-radius: 24px;
+    border: 1px solid #dadada;
+    background: #fdfdfd;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    margin-top: 28px;
+}
+
+.payment_option.pro {
+    margin-top: 0;
+    gap: 97px;
+    border: 1px solid #161a34;
+    background: #161a34;
+}
+
+.payment_option.pro a,
+.payment_option.pro p {
+    color: #f6fdff;
+}
+
+.payment_option_title {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.payment_option_name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 125%;
+}
+
+.payment_option_description {
+    color: #7f828a;
+    text-align: center;
+    font-size: 22px;
+    line-height: 125%;
+    width: 304px;
+}
+
+.payment_option_description-price_in_duration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.payment_option_description-price {
+    color: #0e0f15;
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 125%; /* 80px */
+}
+
+.payment_option_description-duration {
+    color: #7f828a;
+    font-size: 22px;
+}
+
+/* ----------------------CARD'S PROPERTIES-------------------- */
+
+.payment_option_properties {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment_option_properties_item {
+    display: flex;
+    gap: 16px;
+}
+
+.payment_option_properties_item img {
+    align-self: flex-start;
+}
+
+.payment_option_properties_item p {
+    align-self: center;
+    line-height: 125%;
+    width: 220px;
+}
+
+/* ---------------------CARD'S "GET STARTED"--------------------- */
+
+.get-started {
+    display: block;
+    color: #f6fdff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 1px solid #425df8;
+    background: #425df8;
+    padding: 18px 22px;
+    width: fit-content;
+    align-self: center;
+}
+
+/* -------------------------FOOTER---------------------------- */
+
+.footer {
+    border-top: 1px solid #0e0f13;
+    padding: 16px 52px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_wrapper {
+    display: flex;
+    gap: 16px;
+}
+
+.footer_wrapper img {
+    width: 24px;
+}
+
+.footer p {
+    color: #7f828a;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+}
