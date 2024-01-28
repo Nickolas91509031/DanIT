@@ -268,8 +268,8 @@ trainerCardContainer.addEventListener("click", (event) => {
     const modalClose = modal.querySelector(".modal__close");
 
     if (event.target.classList.contains("trainer__show-more")) {
-        disableScroll();
-
+        const scrollPosition = window.scrollY;
+        disableScroll(scrollPosition);
         modal.querySelector(".modal__img").src = trainerData.photo;
         modal.querySelector(".modal__name").innerText =
             trainerData["last name"] + " " + trainerData["first name"];
@@ -287,25 +287,24 @@ trainerCardContainer.addEventListener("click", (event) => {
         document.body.append(modal);
 
         modalClose.addEventListener("click", () => {
+            enableScroll(scrollPosition);
             const modalTemplate = document.querySelector(".modal");
             modalTemplate.remove();
         });
     }
 });
 
-function disableScroll() {
+function disableScroll(scrollPosition) {
     const body = document.body;
-    const scrollPosition = window.scrollY;
 
     body.style.overflow = "hidden";
     body.style.position = "fixed";
-    body.style.widows = "100%";
+    body.style.width = "100%";
     body.style.top = `-${scrollPosition}px`;
 }
 
-function enableScroll() {
+function enableScroll(scrollPosition) {
     const body = document.body;
-    const scrollPosition = window.scrollY;
 
     body.style.overflow = "";
     body.style.position = "";

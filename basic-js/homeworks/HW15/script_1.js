@@ -21,20 +21,9 @@
 
 const changeTextButton = document.querySelector(".btn-change-text");
 const element = document.querySelector(".element");
-let timeNummer = 10;
-
-const timer = setInterval(changeTextByTimer, 1000);
 
 changeTextButton.addEventListener("click", () => {
     setTimeout(() => {
         element.innerText = "Text was changed!";
     }, 3000);
 });
-
-function changeTextByTimer() {
-    if (timeNummer === 1) {
-        element.innerText = "Зворотній відлік завершено";
-        clearInterval(timer);
-    }
-    timeNummer--;
-}
