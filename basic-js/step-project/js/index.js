@@ -243,67 +243,33 @@ const DATA = [
     },
 ];
 
+const cloneData = [...DATA];
 const trainerCardContainer = document.querySelector(
     ".trainers-cards__container"
 );
 const trainerCardSample = document.querySelector("#trainer-card").content;
 const modalTemplate = document.querySelector("#modal-template").content;
-let i = 0;
+const sortSection = document.querySelector(".sorting");
+const sortSectionList = document.querySelectorAll(".sorting__btn");
+const sidebar = document.querySelector(".sidebar");
+const filterButton = document.querySelector(".filters__submit");
+const preloaderElement = document.querySelector(".content");
+let sortSectionId = 0;
 
-DATA.forEach((card) => {
-    const trainerCard = trainerCardSample.cloneNode(true);
-    trainerCard.querySelector(".trainer__img").src = card.photo;
-    trainerCard.querySelector(".trainer__name").innerText =
-        card["last name"] + " " + card["first name"];
-    trainerCard.querySelector(".trainer__show-more").dataset.id = i;
-    trainerCardContainer.append(trainerCard);
-    i++;
-});
+// Блокировка скрола странички
 
-document.querySelector(".sidebar").hidden = false;
-
-trainerCardContainer.addEventListener("click", (event) => {
-    const modal = modalTemplate.cloneNode(true);
-    const trainerData = DATA[event.target.dataset.id];
-    const modalClose = modal.querySelector(".modal__close");
-
-    if (event.target.classList.contains("trainer__show-more")) {
-        const scrollPosition = window.scrollY;
-        disableScroll(scrollPosition);
-        modal.querySelector(".modal__img").src = trainerData.photo;
-        modal.querySelector(".modal__name").innerText =
-            trainerData["last name"] + " " + trainerData["first name"];
-        modal.querySelector(
-            ".modal__point--category"
-        ).innerText = `Категорія: ${trainerData.category}`;
-        modal.querySelector(
-            ".modal__point--experience"
-        ).innerText = `Досвід: ${trainerData.experience}`;
-        modal.querySelector(
-            ".modal__point--specialization"
-        ).innerText = `Напрям тренера: ${trainerData.specialization}`;
-        modal.querySelector(".modal__text").innerText = trainerData.description;
-
-        document.body.append(modal);
-
-        modalClose.addEventListener("click", () => {
-            enableScroll(scrollPosition);
-            const modalTemplate = document.querySelector(".modal");
-            modalTemplate.remove();
-        });
-    }
-});
-
-function disableScroll(scrollPosition) {
+const disableScroll = function (scrollPosition) {
     const body = document.body;
 
     body.style.overflow = "hidden";
     body.style.position = "fixed";
     body.style.width = "100%";
     body.style.top = `-${scrollPosition}px`;
-}
+};
 
-function enableScroll(scrollPosition) {
+// Возобновление скрола странички
+
+const enableScroll = function (scrollPosition) {
     const body = document.body;
 
     body.style.overflow = "";
@@ -312,4 +278,249 @@ function enableScroll(scrollPosition) {
     body.style.top = "";
 
     window.scrollTo(0, scrollPosition);
-}
+};
+
+// Выведение карточек на экран
+
+const addingCard = function (data) {
+    preloaderElement.hidden = false;
+    setTimeout(() => {
+        preloaderElement.hidden = true;
+    }, 1500);
+    setTimeout(() => {
+        data.forEach((card) => {
+            const trainerCard = trainerCardSample.cloneNode(true);
+            trainerCard.querySelector(".trainer__img").src = card.photo;
+            trainerCard.querySelector(".trainer__name").innerText =
+                card["last name"] + " " + card["first name"];
+            trainerCardContainer.append(trainerCard);
+        });
+    }, 1500);
+};
+
+addingCard(DATA);
+
+// Выведение меню сортировки и фильтрации карточек
+
+sidebar.hidden = false;
+sortSection.hidden = false;
+
+// Выведение модульного окна для нажатой карточки тренера
+
+trainerCardContainer.addEventListener("click", (event) => {
+    const modal = modalTemplate.cloneNode(true);
+    const modalClose = modal.querySelector(".modal__close");
+
+    if (event.target.classList.contains("trainer__show-more")) {
+        DATA.forEach((elem) => {
+            if (
+                elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
+                event.target.parentElement
+                    .querySelector(".trainer__img")
+                    .src.split("http://127.0.0.1:5500/basic-js/step-project")[1]
+            ) {
+                const scrollPosition = window.scrollY;
+                disableScroll(scrollPosition);
+                modal.querySelector(".modal__img").src = elem.photo;
+                modal.querySelector(".modal__name").innerText =
+                    elem["last name"] + " " + elem["first name"];
+                modal.querySelector(
+                    ".modal__point--category"
+                ).innerText = `Категорія: ${elem.category}`;
+                modal.querySelector(
+                    ".modal__point--experience"
+                ).innerText = `Досвід: ${elem.experience}`;
+                modal.querySelector(
+                    ".modal__point--specialization"
+                ).innerText = `Напрям тренера: ${elem.specialization}`;
+                modal.querySelector(".modal__text").innerText =
+                    elem.description;
+
+                document.body.append(modal);
+
+                modalClose.addEventListener("click", () => {
+                    enableScroll(scrollPosition);
+                    const modalTemplate = document.querySelector(".modal");
+                    modalTemplate.remove();
+                });
+            }
+        });
+    }
+});
+
+// Добавление идентификаторов для сортирующих кнопок
+
+sortSectionList.forEach((elem) => {
+    elem.dataset.id = sortSectionId++;
+});
+
+// Сортировка карточек
+
+const sortCards = (data) => {
+    sortSection.addEventListener("click", (event) => {
+        const sortingButtonActive = document.querySelector(
+            ".sorting__btn--active"
+        );
+        const trainerCardList = document.querySelectorAll(".trainer");
+        const specializationInputAll = document.querySelector(
+            ".filters__input[name='direction']"
+        );
+        const categoryInputAll = document.querySelector(
+            ".filters__input[name='category']"
+        );
+
+        if (event.target.classList.contains("sorting__btn")) {
+            if (!event.target.classList.contains("sorting__btn--active")) {
+                sortingButtonActive.classList.toggle("sorting__btn--active");
+                event.target.classList.toggle("sorting__btn--active");
+
+                switch (event.target.dataset.id) {
+                    case "0": {
+                        for (const elem of trainerCardList) {
+                            elem.remove();
+                        }
+                        const DATA = cloneData;
+                        addingCard(DATA);
+                        break;
+                    }
+                    case "1": {
+                        for (const elem of trainerCardList) {
+                            elem.remove();
+                        }
+                        data.sort((a, b) =>
+                            a["last name"].localeCompare(b["last name"])
+                        );
+                        addingCard(data);
+                        break;
+                    }
+                    case "2": {
+                        for (const elem of trainerCardList) {
+                            elem.remove();
+                        }
+                        data.sort(
+                            (a, b) =>
+                                b.experience.split(" ")[0] -
+                                a.experience.split(" ")[0]
+                        );
+                        addingCard(data);
+                        break;
+                    }
+                }
+                specializationInputAll.checked = true;
+                categoryInputAll.checked = true;
+            }
+        }
+    });
+};
+
+sortCards(DATA);
+
+// Фильтрация карточек
+
+const filterCards = (data) => {
+    filterButton.addEventListener("click", (event) => {
+        const choosedSpecializationFilter = document.querySelector(
+            ".filters__input[name='direction']:checked"
+        );
+        const choosedCategoryFilter = document.querySelector(
+            ".filters__input[name='category']:checked"
+        );
+        const trainerCardList = document.querySelectorAll(".trainer");
+
+        const filterCategories = (filteredData) => {
+            switch (choosedCategoryFilter.value) {
+                case "all": {
+                    trainerCardList.forEach((elem) => {
+                        elem.remove();
+                    });
+                    addingCard(filteredData);
+                    break;
+                }
+                case "master": {
+                    trainerCardList.forEach((elem) => {
+                        elem.remove();
+                    });
+                    const DATA = filteredData.filter(
+                        (elem) => elem.category === "майстер"
+                    );
+                    addingCard(DATA);
+                    break;
+                }
+                case "specialist": {
+                    trainerCardList.forEach((elem) => {
+                        elem.remove();
+                    });
+                    const DATA = filteredData.filter(
+                        (elem) => elem.category === "спеціаліст"
+                    );
+                    addingCard(DATA);
+                    break;
+                }
+                case "instructor": {
+                    trainerCardList.forEach((elem) => {
+                        elem.remove();
+                    });
+                    const DATA = filteredData.filter(
+                        (elem) => elem.category === "інструктор"
+                    );
+                    addingCard(DATA);
+                    break;
+                }
+            }
+        };
+
+        event.preventDefault();
+
+        switch (choosedSpecializationFilter.value) {
+            case "all": {
+                trainerCardList.forEach((elem) => {
+                    elem.remove();
+                });
+                filterCategories(data);
+                break;
+            }
+            case "gym": {
+                trainerCardList.forEach((elem) => {
+                    elem.remove();
+                });
+                const DATA = data.filter(
+                    (elem) => elem.specialization === "Тренажерний зал"
+                );
+                filterCategories(DATA);
+                break;
+            }
+            case "fight club": {
+                trainerCardList.forEach((elem) => {
+                    elem.remove();
+                });
+                const DATA = data.filter(
+                    (elem) => elem.specialization === "Бійцівський клуб"
+                );
+                filterCategories(DATA);
+                break;
+            }
+            case "kids club": {
+                trainerCardList.forEach((elem) => {
+                    elem.remove();
+                });
+                const DATA = data.filter(
+                    (elem) => elem.specialization === "Дитячий клуб"
+                );
+                filterCategories(DATA);
+                break;
+            }
+            case "swimming pool": {
+                trainerCardList.forEach((elem) => {
+                    elem.remove();
+                });
+                const DATA = data.filter(
+                    (elem) => elem.specialization === "Басейн"
+                );
+                filterCategories(DATA);
+                break;
+            }
+        }
+    });
+};
+
+filterCards(DATA);
