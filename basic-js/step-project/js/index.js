@@ -323,14 +323,24 @@ sortSection.hidden = false;
 trainerCardContainer.addEventListener("click", (event) => {
     const modal = modalTemplate.cloneNode(true);
     const modalClose = modal.querySelector(".modal__close");
+    const protocol = window.location.protocol;
+    const host = window.location.host;
 
     if (event.target.classList.contains("trainer__show-more")) {
         DATA.forEach((elem) => {
+            // console.log(
+            //     elem.photo.split(".")[1] + "." + elem.photo.split(".")[2]
+            // );
+            // console.log(
+            //     event.target.parentElement
+            //         .querySelector(".trainer__img")
+            //         .src.split(`${protocol}//${host}/basic-js/step-project`)[1]
+            // );
             if (
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split("http://127.0.0.1:5500/basic-js/step-project")[1]
+                    .src.split(`${protocol}//${host}/basic-js/step-project`)[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
