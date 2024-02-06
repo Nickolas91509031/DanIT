@@ -254,6 +254,13 @@ const sortSectionList = document.querySelectorAll(".sorting__btn");
 const sidebar = document.querySelector(".sidebar");
 const filterButton = document.querySelector(".filters__submit");
 const preloaderElement = document.querySelector(".content");
+const savedData = sessionStorage.getItem("savedData");
+const parsedData = JSON.parse(savedData);
+const savedSortButton = sessionStorage.getItem("savedSortButton");
+const savedCategoryFilter = sessionStorage.getItem("savedCategoryFilter");
+const savedSpecializationFilter = sessionStorage.getItem(
+    "savedSpecializationFilter"
+);
 let sortSectionId = 0;
 
 // Блокировка скрола странички
@@ -283,6 +290,8 @@ const enableScroll = function (scrollPosition) {
 // Выведение карточек на экран
 
 const addingCard = function (data) {
+    const jsonData = JSON.stringify(data);
+    sessionStorage.setItem("savedData", jsonData);
     preloaderElement.hidden = false;
     setTimeout(() => {
         preloaderElement.hidden = true;
@@ -298,7 +307,11 @@ const addingCard = function (data) {
     }, 1500);
 };
 
-addingCard(DATA);
+if (parsedData !== null) {
+    addingCard(parsedData);
+} else {
+    addingCard(DATA);
+}
 
 // Выведение меню сортировки и фильтрации карточек
 
@@ -357,6 +370,13 @@ sortSectionList.forEach((elem) => {
 // Сортировка карточек
 
 const sortCards = (data) => {
+    if (savedSortButton !== null && savedSortButton !== 0) {
+        sortSectionList[savedSortButton].classList.toggle(
+            "sorting__btn--active"
+        );
+        sortSectionList[0].classList.toggle("sorting__btn--active");
+    }
+
     sortSection.addEventListener("click", (event) => {
         const sortingButtonActive = document.querySelector(
             ".sorting__btn--active"
@@ -371,6 +391,8 @@ const sortCards = (data) => {
 
         if (event.target.classList.contains("sorting__btn")) {
             if (!event.target.classList.contains("sorting__btn--active")) {
+                const sortButtonActiveId = event.target.dataset.id;
+                sessionStorage.setItem("savedSortButton", sortButtonActiveId);
                 sortingButtonActive.classList.toggle("sorting__btn--active");
                 event.target.classList.toggle("sorting__btn--active");
 
@@ -418,6 +440,18 @@ sortCards(DATA);
 // Фильтрация карточек
 
 const filterCards = (data) => {
+    if (savedSpecializationFilter !== (null || "all")) {
+        document.querySelector(
+            `.filters__input[name='direction'][value='${savedSpecializationFilter}']`
+        ).checked = true;
+    }
+
+    if (savedCategoryFilter !== (null || "all")) {
+        document.querySelector(
+            `.filters__input[name='category'][value='${savedCategoryFilter}']`
+        ).checked = true;
+    }
+
     filterButton.addEventListener("click", (event) => {
         const choosedSpecializationFilter = document.querySelector(
             ".filters__input[name='direction']:checked"
@@ -426,6 +460,17 @@ const filterCards = (data) => {
             ".filters__input[name='category']:checked"
         );
         const trainerCardList = document.querySelectorAll(".trainer");
+        const choosedSpecializationFilterValue =
+            choosedSpecializationFilter.value;
+        const choosedCategoryFilterValue = choosedCategoryFilter.value;
+        sessionStorage.setItem(
+            "savedSpecializationFilter",
+            choosedSpecializationFilterValue
+        );
+        sessionStorage.setItem(
+            "savedCategoryFilter",
+            choosedCategoryFilterValue
+        );
 
         const filterCategories = (filteredData) => {
             switch (choosedCategoryFilter.value) {
