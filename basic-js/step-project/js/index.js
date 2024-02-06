@@ -440,13 +440,13 @@ sortCards(DATA);
 // Фильтрация карточек
 
 const filterCards = (data) => {
-    if (savedSpecializationFilter !== (null || "all")) {
+    if (savedSpecializationFilter !== (null && "all")) {
         document.querySelector(
             `.filters__input[name='direction'][value='${savedSpecializationFilter}']`
         ).checked = true;
     }
 
-    if (savedCategoryFilter !== (null || "all")) {
+    if (savedCategoryFilter !== (null && "all")) {
         document.querySelector(
             `.filters__input[name='category'][value='${savedCategoryFilter}']`
         ).checked = true;
