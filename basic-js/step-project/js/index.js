@@ -323,8 +323,8 @@ sortSection.hidden = false;
 trainerCardContainer.addEventListener("click", (event) => {
     const modal = modalTemplate.cloneNode(true);
     const modalClose = modal.querySelector(".modal__close");
-    const protocol = window.location.protocol;
-    const host = window.location.host;
+    // const protocol = window.location.protocol;
+    // const host = window.location.host;
 
     if (event.target.classList.contains("trainer__show-more")) {
         DATA.forEach((elem) => {
@@ -334,13 +334,22 @@ trainerCardContainer.addEventListener("click", (event) => {
             // console.log(
             //     event.target.parentElement
             //         .querySelector(".trainer__img")
-            //         .src.split(`${protocol}//${host}/basic-js/step-project`)[1]
+            //         .src.split(
+            //             location.origin +
+            //                 location.pathname.split("/index.html")[0]
+            //         )[1]
+            // );
+            // console.log(
+            //     location.origin + location.pathname.split("/index.html")[0]
             // );
             if (
                 elem.photo.split(".")[1] + "." + elem.photo.split(".")[2] ===
                 event.target.parentElement
                     .querySelector(".trainer__img")
-                    .src.split(`${protocol}//${host}/basic-js/step-project`)[1]
+                    .src.split(
+                        location.origin +
+                            location.pathname.split("/index.html")[0]
+                    )[1]
             ) {
                 const scrollPosition = window.scrollY;
                 disableScroll(scrollPosition);
@@ -377,10 +386,18 @@ sortSectionList.forEach((elem) => {
     elem.dataset.id = sortSectionId++;
 });
 
+// Удаление карточек
+
+const deleteCards = (trainerCardList) => {
+    for (const elem of trainerCardList) {
+        elem.remove();
+    }
+};
+
 // Сортировка карточек
 
 const sortCards = (data) => {
-    if (savedSortButton !== null && savedSortButton !== 0) {
+    if (savedSortButton) {
         sortSectionList[savedSortButton].classList.toggle(
             "sorting__btn--active"
         );
@@ -408,17 +425,13 @@ const sortCards = (data) => {
 
                 switch (event.target.dataset.id) {
                     case "0": {
-                        for (const elem of trainerCardList) {
-                            elem.remove();
-                        }
+                        deleteCards(trainerCardList);
                         const DATA = cloneData;
                         addingCard(DATA);
                         break;
                     }
                     case "1": {
-                        for (const elem of trainerCardList) {
-                            elem.remove();
-                        }
+                        deleteCards(trainerCardList);
                         data.sort((a, b) =>
                             a["last name"].localeCompare(b["last name"])
                         );
@@ -426,9 +439,7 @@ const sortCards = (data) => {
                         break;
                     }
                     case "2": {
-                        for (const elem of trainerCardList) {
-                            elem.remove();
-                        }
+                        deleteCards(trainerCardList);
                         data.sort(
                             (a, b) =>
                                 b.experience.split(" ")[0] -
@@ -485,16 +496,12 @@ const filterCards = (data) => {
         const filterCategories = (filteredData) => {
             switch (choosedCategoryFilter.value) {
                 case "all": {
-                    trainerCardList.forEach((elem) => {
-                        elem.remove();
-                    });
+                    deleteCards(trainerCardList);
                     addingCard(filteredData);
                     break;
                 }
                 case "master": {
-                    trainerCardList.forEach((elem) => {
-                        elem.remove();
-                    });
+                    deleteCards(trainerCardList);
                     const DATA = filteredData.filter(
                         (elem) => elem.category === "майстер"
                     );
@@ -502,9 +509,7 @@ const filterCards = (data) => {
                     break;
                 }
                 case "specialist": {
-                    trainerCardList.forEach((elem) => {
-                        elem.remove();
-                    });
+                    deleteCards(trainerCardList);
                     const DATA = filteredData.filter(
                         (elem) => elem.category === "спеціаліст"
                     );
@@ -512,9 +517,7 @@ const filterCards = (data) => {
                     break;
                 }
                 case "instructor": {
-                    trainerCardList.forEach((elem) => {
-                        elem.remove();
-                    });
+                    deleteCards(trainerCardList);
                     const DATA = filteredData.filter(
                         (elem) => elem.category === "інструктор"
                     );
@@ -528,16 +531,12 @@ const filterCards = (data) => {
 
         switch (choosedSpecializationFilter.value) {
             case "all": {
-                trainerCardList.forEach((elem) => {
-                    elem.remove();
-                });
+                deleteCards(trainerCardList);
                 filterCategories(data);
                 break;
             }
             case "gym": {
-                trainerCardList.forEach((elem) => {
-                    elem.remove();
-                });
+                deleteCards(trainerCardList);
                 const DATA = data.filter(
                     (elem) => elem.specialization === "Тренажерний зал"
                 );
@@ -545,9 +544,7 @@ const filterCards = (data) => {
                 break;
             }
             case "fight club": {
-                trainerCardList.forEach((elem) => {
-                    elem.remove();
-                });
+                deleteCards(trainerCardList);
                 const DATA = data.filter(
                     (elem) => elem.specialization === "Бійцівський клуб"
                 );
@@ -555,9 +552,7 @@ const filterCards = (data) => {
                 break;
             }
             case "kids club": {
-                trainerCardList.forEach((elem) => {
-                    elem.remove();
-                });
+                deleteCards(trainerCardList);
                 const DATA = data.filter(
                     (elem) => elem.specialization === "Дитячий клуб"
                 );
@@ -565,9 +560,7 @@ const filterCards = (data) => {
                 break;
             }
             case "swimming pool": {
-                trainerCardList.forEach((elem) => {
-                    elem.remove();
-                });
+                deleteCards(trainerCardList);
                 const DATA = data.filter(
                     (elem) => elem.specialization === "Басейн"
                 );

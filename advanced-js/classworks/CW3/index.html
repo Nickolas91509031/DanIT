@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <script type="module" src="scripts/index.js"></script>
+</head>
+<body>
+
+<template id="modal">
+    <div class="modal">
+        <div class="modal__background"></div>
+
+        <div class="modal__main-container">
+            <button class="modal__close"></button>
+            <div class="modal__content-wrapper"></div>
+            <div class="modal__button-wrapper"></div>
+        </div>
+    </div>
+</template>
+
+<template id="card">
+    <div class="card">
+        <button class="card__btn card__edit"></button>
+        <button class="card__btn card__delete"></button>
+        <div class="card__content-container"></div>
+    </div>
+</template>
+
+</body>
+</html>

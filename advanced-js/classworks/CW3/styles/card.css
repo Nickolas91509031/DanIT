@@ -1,0 +1,60 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px 20px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    margin: 20px;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.card h3 {
+    font-size: 36px;
+    line-height: 54px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: gray;
+}
+
+.card__btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid plum;
+    outline: none;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    filter: brightness(.9);
+}
+
+.card__btn:hover {
+    box-shadow: 0 0 4px 0 rgba(34, 60, 80, 0.6);
+    filter: brightness(1);
+}
+
+.card__btn:active {
+    box-shadow: 0 0 4px 0 rgba(34, 60, 80, 0);
+}
+
+.card__edit {
+    right: 52px;
+    background-color: cornflowerblue;
+    background-image: url("../assets/card/pencil.png");
+}
+
+
+.card__delete {
+    background-color: tomato;
+    background-image: url("../assets/card/delete.png");
+}
