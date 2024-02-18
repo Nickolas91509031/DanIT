@@ -6,6 +6,7 @@
 Смысл прототипного наследования в том, что один объект можно сделать прототипом другого.
 
 2. Для чого потрібно викликати super() у конструкторі класу-нащадка?
+2. super – это ключевое слово, которое используется для вызова методов родительского класса в дочернем классе.
 
 Завдання
 
@@ -19,3 +20,61 @@
 Примітка
 Завдання має бути виконане на чистому Javascript без використання бібліотек типу jQuery або React.
 */
+
+class Employee {
+    constructor(name, age, salary) {
+        this._name = name;
+        this._age = age;
+        this._salary = salary;
+    }
+    get name() {
+        return this._name;
+    }
+    set name(newName) {
+        newName = newName.trim();
+        if (newName === "") {
+            throw "Имя не может быть пустым";
+        }
+        this._name = newName;
+    }
+    get age() {
+        return this._name;
+    }
+    set age(newAge) {
+        newAge = newAge.trim();
+        if (newAge === "") {
+            throw "Возраст не может быть пустым";
+        }
+        this._age = newAge;
+    }
+    get salary() {
+        return this._salary;
+    }
+    set salary(newSalary) {
+        newSalary = newSalary.trim();
+        if (newSalary === "") {
+            throw "Зарплата не может быть пустой";
+        }
+        this._salary = newSalary;
+    }
+}
+
+class Programmer extends Employee {
+    constructor(name, age, salary, lang) {
+        super(name, age, salary);
+        this._lang = lang;
+    }
+    get salary() {
+        return this._salary * 3;
+    }
+}
+
+const nick = new Programmer("Nick", 19, 2500, "German");
+const job = new Programmer("Job", 24, 3000, "Ukranian");
+const jack = new Programmer("Jack", 30, 6000, "English");
+
+console.log(nick.salary); // 7500
+
+console.log(nick);
+console.log(job);
+console.log(jack);
