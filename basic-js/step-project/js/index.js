@@ -307,7 +307,7 @@ const addingCard = function (data) {
     }, 1500);
 };
 
-if (parsedData !== null) {
+if (parsedData) {
     addingCard(parsedData);
 } else {
     addingCard(DATA);
