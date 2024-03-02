@@ -89,8 +89,8 @@ const characters = [
 ];
 
 const charactersShortInfo = characters.map((elem) => {
-    let {gender: gender, status: status, ...args} = elem;
-    return {...args};
+    let { gender: gender, status: status, ...args } = elem;
+    return { ...args };
 });
 
 console.log(charactersShortInfo);
@@ -112,7 +112,7 @@ const user1 = {
     years: 30,
 };
 
-const destructure = ({name, years, isAdmin = false}) => {
+const destructure = ({ name, years, isAdmin = false }) => {
     user1.name = name;
     user1.years = years;
     user1.isAdmin = isAdmin;
@@ -161,6 +161,13 @@ const satoshi2018 = {
     birth: "1975-04-05",
 };
 
+const getFullProfile = (a, b, c) => {
+    const fullProfile = { ...a, ...b, ...c };
+    return fullProfile;
+};
+
+console.log(getFullProfile(satoshi2018, satoshi2019, satoshi2020));
+
 /*
 Завдання 5
 Дано масив книг. Вам потрібно додати до нього ще одну книгу, не змінюючи існуючий масив (в результаті операції має бути створено новий масив).
@@ -186,6 +193,13 @@ const bookToAdd = {
     author: "George R. R. Martin",
 };
 
+const addObject = (arr, obj) => {
+    const newArray = [...arr, obj];
+    return newArray;
+};
+
+console.log(addObject(books, bookToAdd));
+
 /*
 Завдання 6
 Даний об'єкт employee. Додайте до нього властивості age і salary, не змінюючи початковий об'єкт (має бути створено новий об'єкт, який включатиме всі необхідні властивості). Виведіть новий об'єкт у консоль.
@@ -196,6 +210,13 @@ const employee = {
     surname: "Klichko",
 };
 
+const addValueToObject = (obj, age, salary) => {
+    const employee1 = {...obj, age: age, salary: salary};
+    return employee1;
+}
+
+console.log(addValueToObject(employee, 19, 2500));
+
 /*
 Завдання 7
 Доповніть код так, щоб він коректно працював
@@ -205,5 +226,7 @@ const array = ["value", () => "showValue"];
 
 // Допишіть код тут
 
-alert(value); // має бути виведено 'value'
-alert(showValue()); // має бути виведено 'showValue'
+const [value, showValue] = array;
+
+console.log(value); // має бути виведено 'value'
+console.log(showValue()); // має бути виведено 'showValue'
