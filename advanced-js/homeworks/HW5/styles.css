@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        background-color: rgb(75, 75, 75);
+        border-radius: 20px 20px;
+        padding: 0.5em;
+        font-size: 20px;
+        color: white;
+
+        .user-container {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            background-color: rgb(101, 97, 97);
+            border-radius: 15px 15px 10px 10px;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .btn-delete {
+                position: absolute;
+                background-color: rgb(50, 50, 50);
+                border: none;
+                border-radius: 5px;
+                right: 20px;
+                color: rgb(192, 192, 192);
+                padding: 0.5em;
+            }
+        }
+
+        .title,
+        .body {
+            align-self: center;
+        }
+    }
+}
