@@ -6,17 +6,17 @@ import ModalFooter from './ModalFooter'
 import ModalClose from './ModalClose'
 import ModalBody from './ModalBody'
 
-const Modal = ({ onClick, text }) => {
+const Modal = ({ onClick, text, onCancel, secondText }) => {
 
     return (
         <div className="container">
             <ModalBody>
                 <ModalHeader>
                     <ModalClose
-                        onClick={onClick}
+                        onClick={onCancel}
                     />
                     <ModalDescription 
-                        children='Do you really want to add this Product?'
+                        children={secondText}
                     />
                 </ModalHeader>
                 <ModalFooter>
@@ -28,7 +28,7 @@ const Modal = ({ onClick, text }) => {
                     </Button>
                 </ModalFooter>
             </ModalBody>
-            <ModalWrapper />
+            <ModalWrapper onClick={onCancel}/>
         </div>
     )
 }

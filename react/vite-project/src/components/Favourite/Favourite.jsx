@@ -1,6 +1,5 @@
-import './Cards.scss'
-import ProductCard from './ProductCard'
-
+import './Favourite.scss'
+import FavouriteCard from './FavouriteCard'
 
 export default function CardsList({ data, addToCart = () => {}, cart, removeFromCart = () => {}, addToFavourite, favourite, removeFromFavourite }) {
     return (
@@ -8,7 +7,7 @@ export default function CardsList({ data, addToCart = () => {}, cart, removeFrom
             {
                 data.map((product) => {
                     return (
-                        <ProductCard 
+                        <FavouriteCard 
                             key={product.sku}
                             data={cart}
                             addToCart={addToCart}

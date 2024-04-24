@@ -1,14 +1,13 @@
-import './Cards.scss'
-import ProductCard from './ProductCard'
+import './Cart'
+import Card from './Card'
 
-
-export default function CardsList({ data, addToCart = () => {}, cart, removeFromCart = () => {}, addToFavourite, favourite, removeFromFavourite }) {
+export default function CardsList({ data, addToCart = () => {}, cart, removeFromCart = () => {}, addToFavourite, favourite }) {
     return (
         <div className="cards-wrapper">
             {
                 data.map((product) => {
                     return (
-                        <ProductCard 
+                        <Card 
                             key={product.sku}
                             data={cart}
                             addToCart={addToCart}
@@ -20,7 +19,6 @@ export default function CardsList({ data, addToCart = () => {}, cart, removeFrom
                             removeFromCart={removeFromCart}
                             addToFavourite={addToFavourite}
                             favourite={favourite}
-                            removeFromFavourite={removeFromFavourite}
                         />
                     )
                 })

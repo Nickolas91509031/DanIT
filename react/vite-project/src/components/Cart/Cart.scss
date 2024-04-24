@@ -1,0 +1,61 @@
+.cards-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    .close-cross {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    .card-wrapper {
+        position: relative;
+        border-radius: 10px;
+        padding: 10px;
+
+        .card-star {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .card-img {
+            background-color: rgba(139, 139, 215, 0.532);
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .card-description {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .card-name {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: rgb(46, 45, 45);
+            }
+
+            .card-price {
+                background-color: rgba(84, 82, 82, 0.322);
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: rgb(39, 38, 38);
+            }
+        }
+
+        .card-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

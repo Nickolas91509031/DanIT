@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react'
-import { Routes } from 'react-router-dom'
 import { useImmer } from "use-immer";
+import AppRouter from './AppRouter';
 import './myStyles.scss'
 import Modal from './components/Modal/Modal'
 import Header from './components/Header/index'
-import CardsList from './components/Cards/CardsList'
 import Footer from './components/Footer/index'
 
 function App() {
   const [data, setData] = useState([])
-  const [modal, setModal] = useState(false)
-  const [isWhite, setIsWhite] = useState(true)
-  // const [cart, setCart] = useImmer([])
-  // const [favourite, setFavourite] = useImmer([])
+  const [card, setCard] = useState(null)
+  const [modalAdding, setModalAdding] = useState(false)
+  const [modalRemove, setModalRemove] = useState(false)
   const [cart, setCart] = useImmer(JSON.parse(localStorage.getItem('cartItems')) ? JSON.parse(localStorage.getItem('cartItems')) : [])
   const [favourite, setFavourite] = useImmer(JSON.parse(localStorage.getItem('favouriteItems')) ? JSON.parse(localStorage.getItem('favouriteItems')) : [])
 
@@ -39,19 +37,36 @@ function App() {
   }, [favourite])
 
   const toggleModal = () => {
-    modal ? setModal(false) : setModal(true);
+    modalAdding ? setModalAdding(false) : setModalAdding(true);
+  }
+
+  const toggleModalRemove = () => {
+    modalRemove ? setModalRemove(false) : setModalRemove(true);
+  }
+
+  const saveCard = (product) => {
+    toggleModalRemove();
+    setCard(product.target.dataset.id);
+  }
+
+  const saveCardToCart = (product) => {
+    toggleModal();
+    setCard(product.target.dataset.id);
   }
 
   const removeFromCart = () => {
-    setCart((draft => {
-      draft.slice(product.target.dataset.id);
-    }))
+    toggleModalRemove();
+    setCart(prevCart => prevCart.filter(item => item !== card));
   }
 
-  const addToCart = (product) => {
+  const removeFromFavourite = (product) => {
+    setFavourite(prevCart => prevCart.filter(item => item !== product.target.id));
+  }
+
+  const addToCart = () => {
     toggleModal();
     setCart((draft => {
-      draft.push(product.target.dataset.id);
+      draft.push(card);
     }))
   }
 
@@ -59,7 +74,6 @@ function App() {
     setFavourite((draft => {
       draft.push(product.target.id);
     }))
-    console.log(product.target.id)
   }
 
   return (
@@ -68,15 +82,25 @@ function App() {
         counter={cart.length}
         favourite={favourite.length}
       />
-      {data && (
-        <CardsList data={data} addToCart={addToCart} isWhite={isWhite} cart={cart} removeFromCart={removeFromCart} addToFavourite={addToFavourite} favourite={favourite}>
-        </CardsList>
-      )}
+      <AppRouter
+        data={data} addToCart={saveCardToCart} cart={cart} removeFromCart={saveCard} addToFavourite={addToFavourite} removeFromFavourite={removeFromFavourite} favourite={favourite}
+      ></AppRouter>
+
       <Footer />
-      {modal && (
+      {modalAdding && (
         <Modal 
-          onClick={toggleModal}
+          onClick={addToCart}
+          onCancel={toggleModal}
           text='Add to Cart'
+          secondText='Do you really want to add this Product?'
+        />
+      )}
+      {modalRemove && (
+        <Modal 
+          onClick={removeFromCart}
+          onCancel={toggleModalRemove}
+          text='Remove from Cart'
+          secondText='Do you really want to remove this Product?'
         />
       )}
     </>
